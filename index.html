@@ -535,6 +535,19 @@ footer {
 </div>
 
 <script>
+let API_KEY = '';
+
+function initApiKey(){
+  const saved = sessionStorage.getItem('gli_key');
+  if(saved){ API_KEY = saved; return; }
+  const key = prompt('Pega tu Anthropic API Key para activar el agente:\n(sk-ant-...)');
+  if(key && key.startsWith('sk-')){
+    API_KEY = key.trim();
+    sessionStorage.setItem('gli_key', API_KEY);
+  }
+}
+initApiKey();
+
 const SYSTEM = `Eres GLI (Genomma Lab Intelligence), un agente especializado de trade marketing para Suerox en Walmart México, creado por Eduardo Flores Mora del equipo de Trade Marketing de Genomma Lab. Respondes en español, de forma precisa, directa y ejecutiva. No usas lenguaje genérico — siempre referencias datos reales del contexto.
 
 CONTEXTO DE NEGOCIO COMPLETO:
@@ -685,10 +698,17 @@ async function callClaude(userMsg){
   history.push({role:'user', content: userMsg});
   const typing = addTyping();
 
+  if(!API_KEY){ initApiKey(); }
+  if(!API_KEY){ typing.remove(); addMsg('ai','Necesito una API Key válida. Recarga la página e ingresa tu clave sk-ant-...'); btn.disabled=false; return; }
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key': API_KEY,
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
+      },
       body: JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens: 1000,
