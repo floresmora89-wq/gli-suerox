@@ -338,6 +338,83 @@ footer {
 .legend-row{display:flex;gap:20px;margin-bottom:10px;font-size:11px;color:var(--muted);flex-wrap:wrap}
 .legend-item{display:flex;align-items:center;gap:6px}
 .legend-sq{width:10px;height:10px;border-radius:2px}
+
+.perf-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.perf-lbl{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
+.toggle-group{display:flex;border:1px solid var(--border2);border-radius:6px;overflow:hidden}
+.toggle-btn{font-family:var(--font-mono);font-size:10px;padding:5px 14px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all .12s;letter-spacing:.04em}
+.toggle-btn.active{background:var(--accent);color:#000;font-weight:600}
+.fmt-sel{font-family:var(--font-mono);font-size:10px;padding:5px 10px;border:1px solid var(--border2);border-radius:6px;background:var(--bg3);color:var(--text);cursor:pointer;outline:none}
+.fmt-sel:hover{border-color:var(--accent)}
+.perf-table-wrap{overflow-x:auto}
+.pt{width:100%;border-collapse:collapse;font-size:11px;min-width:820px}
+.pt thead tr:first-child th{background:var(--bg4);color:var(--muted);font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;white-space:nowrap;border-bottom:1px solid var(--border2);text-align:right}
+.pt thead tr:first-child th:first-child{text-align:left;min-width:185px}
+.pt thead tr:first-child th.ph{text-align:center;border-left:1px solid var(--border);padding:7px 16px}
+.pt thead tr:nth-child(2) th{background:var(--bg3);color:var(--muted);font-family:var(--font-mono);font-size:9px;padding:5px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--border2)}
+.pt thead tr:nth-child(2) th:first-child{text-align:left}
+.pt thead tr:nth-child(2) th.ph{border-left:1px solid var(--border)}
+.pt tbody tr{border-bottom:1px solid var(--border)}
+.pt tbody tr:hover td{background:rgba(255,255,255,.025)}
+.pt td{padding:7px 8px;white-space:nowrap}
+.pt td:first-child{font-size:11px;color:var(--text);font-weight:500;padding-left:10px}
+.pt td.n{font-family:var(--font-mono);font-size:10px;text-align:right}
+.pt td.p{font-family:var(--font-mono);font-size:10px;text-align:right;font-weight:600}
+.pt td.p.pos{color:#4ade80}.pt td.p.neg{color:var(--red)}.pt td.p.neu{color:var(--muted)}.pt td.p.nd{color:var(--muted);font-weight:400}
+.pt td.bc{border-left:1px solid var(--border)}
+.pt tfoot td{font-family:var(--font-mono);font-size:10px;font-weight:700;background:rgba(0,212,168,.06);border-top:2px solid var(--accent);padding:8px 8px;text-align:right;white-space:nowrap}
+.pt tfoot td:first-child{color:var(--accent);text-align:left;padding-left:10px;font-size:10px}
+.new-sk{font-size:9px;color:var(--gold);margin-left:3px}
+
+/* ── PROMO CALCULATOR ── */
+.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.calc-input-box{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:14px 16px;position:relative}
+.calc-input-box.highlight{border-color:var(--accent);background:rgba(0,212,168,.04)}
+.cib-label{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.cib-val{font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text)}
+.cib-val.accent{color:var(--accent)}
+.cib-val.amber{color:var(--amber)}
+.cib-val.red{color:var(--red)}
+.cib-val.green{color:var(--green)}
+.cib-sub{font-size:10px;color:var(--muted);margin-top:3px;font-family:var(--font-mono)}
+.calc-inp{
+  width:100%;background:transparent;border:none;outline:none;
+  font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--text);
+  padding:0;margin-top:2px;
+}
+.calc-inp::placeholder{color:var(--border2);font-size:18px}
+.peso-prefix{font-family:var(--font-head);font-size:18px;color:var(--muted);margin-right:4px}
+.calc-select-row{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.mecanica-sel{
+  font-family:var(--font-mono);font-size:11px;
+  padding:8px 14px;border:1px solid var(--border2);border-radius:8px;
+  background:var(--bg3);color:var(--text);cursor:pointer;outline:none;
+  transition:border-color .15s;
+}
+.mecanica-sel:hover,.mecanica-sel:focus{border-color:var(--accent)}
+.mecanica-badge{
+  font-family:var(--font-mono);font-size:10px;font-weight:600;
+  padding:5px 12px;border-radius:20px;letter-spacing:.04em;
+}
+.mb-p5k{background:rgba(0,180,216,.15);color:#00B4D8;border:1px solid rgba(0,180,216,.3)}
+.mb-rb{background:rgba(255,176,32,.12);color:var(--amber);border:1px solid rgba(255,176,32,.3)}
+.mb-ma{background:rgba(155,127,255,.12);color:var(--purple);border:1px solid rgba(155,127,255,.3)}
+.calc-extra{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.calc-extra.rb-extra{grid-template-columns:1fr 1fr 1fr}
+.calc-extra.ma-extra{grid-template-columns:1fr 1fr 1fr}
+.calc-results{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:18px;margin-bottom:8px}
+.cr-title{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.cr-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.cr-row:last-child{border-bottom:none}
+.cr-label{font-size:12px;color:var(--muted)}
+.cr-val{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text)}
+.cr-row.total-row{margin-top:4px;padding-top:12px;border-top:2px solid var(--accent)}
+.cr-row.total-row .cr-label{color:var(--accent);font-weight:600;font-size:13px}
+.cr-row.total-row .cr-val{font-size:18px;color:var(--accent);font-family:var(--font-head)}
+.cr-row.edi-row .cr-label{color:var(--amber)}
+.cr-row.edi-row .cr-val{color:var(--amber)}
+.mec-desc{font-size:11px;color:var(--muted);line-height:1.6;padding:10px 12px;background:var(--bg4);border-radius:7px;border-left:2px solid var(--accent);margin-bottom:16px}
+.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -606,53 +683,195 @@ footer {
   </div>
 
   <!-- SELL-OUT VALOR por SKU-MES -->
-  <div class="section-label" style="margin-top:4px">Sell-out $ por SKU — Febrero y Marzo 2026 (acumulado ambos canales)</div>
-  <div class="panel" style="overflow-x:auto;margin-bottom:16px">
-    <table class="data-table">
-      <thead>
-        <tr><th>SKU</th><th class="r">Feb 2026</th><th class="r">Mar 2026 (parcial)</th><th class="r">Total YTD</th><th>Participación</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Fresa Kiwi 630ml</td><td class="r mono">$1,800,756</td><td class="r mono">$1,396,329</td><td class="r mono bold">$3,197,085</td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--accent)"></div></div></td></tr>
-        <tr><td>Uva 630ml</td><td class="r mono">$757,052</td><td class="r mono">$638,188</td><td class="r mono bold">$1,395,240</td><td><div class="bar-wrap"><div class="bar-fill" style="width:44%"></div></div></td></tr>
-        <tr><td>Mora Azul 630ml</td><td class="r mono">$761,849</td><td class="r mono">$589,290</td><td class="r mono bold">$1,351,139</td><td><div class="bar-wrap"><div class="bar-fill" style="width:42%"></div></div></td></tr>
-        <tr><td>Fresa Frutos Rojos 630ml</td><td class="r mono">$692,871</td><td class="r mono">$590,662</td><td class="r mono bold">$1,283,532</td><td><div class="bar-wrap"><div class="bar-fill" style="width:40%"></div></div></td></tr>
-        <tr><td>Lima Limón 630ml</td><td class="r mono">$569,612</td><td class="r mono">$486,513</td><td class="r mono bold">$1,056,125</td><td><div class="bar-wrap"><div class="bar-fill" style="width:33%"></div></div></td></tr>
-        <tr><td>Coco 630ml</td><td class="r mono">$540,918</td><td class="r mono">$470,363</td><td class="r mono bold">$1,011,281</td><td><div class="bar-wrap"><div class="bar-fill" style="width:32%"></div></div></td></tr>
-        <tr><td>Manzana 630ml</td><td class="r mono">$529,440</td><td class="r mono">$446,151</td><td class="r mono bold">$975,591</td><td><div class="bar-wrap"><div class="bar-fill" style="width:31%"></div></div></td></tr>
-        <tr><td>Naranja Mandarina 630ml</td><td class="r mono">$515,038</td><td class="r mono">$407,635</td><td class="r mono bold">$922,673</td><td><div class="bar-wrap"><div class="bar-fill" style="width:29%"></div></div></td></tr>
-        <tr><td>Uva Mora Azul 630ml</td><td class="r mono">$431,812</td><td class="r mono">$415,185</td><td class="r mono bold">$846,998</td><td><div class="bar-wrap"><div class="bar-fill" style="width:26%"></div></div></td></tr>
-        <tr><td>Coco Piña 630ml</td><td class="r mono">$234,066</td><td class="r mono">$327,024</td><td class="r mono bold">$561,090</td><td><div class="bar-wrap"><div class="bar-fill" style="width:18%"></div></div></td></tr>
-        <tr><td>Manzana Limón 630ml (Vitamins)</td><td class="r mono">$230,088</td><td class="r mono">$200,871</td><td class="r mono bold">$430,959</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
-        <tr><td>Naranja Mango 630ml (Vitamins)</td><td class="r mono">$233,044</td><td class="r mono">$193,485</td><td class="r mono bold">$426,529</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
-        <tr><td>Fresa Kiwi 1L</td><td class="r mono">$190,691</td><td class="r mono">$220,766</td><td class="r mono bold">$411,457</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
-        <tr><td>Mora Azul 1L</td><td class="r mono">$196,428</td><td class="r mono">$211,439</td><td class="r mono bold">$407,866</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
-      </tbody>
-    </table>
+
+  <!-- INTERACTIVE PERF TABLE -->
+  <div class="section-label" style="margin-top:28px">Sell-out Suerox por SKU — Performance LW / L4W / L8W / YTD</div>
+  <div class="panel" style="margin-bottom:16px">
+    <div class="perf-controls">
+      <span class="perf-lbl">Métrica:</span>
+      <div class="toggle-group">
+        <button class="toggle-btn active" onclick="setMetric('valor',this)">Valor $</button>
+        <button class="toggle-btn" onclick="setMetric('pzs',this)">Piezas</button>
+      </div>
+      <span class="perf-lbl" style="margin-left:10px">Formato:</span>
+      <select class="fmt-sel" id="fmtSel" onchange="renderPerfTable()">
+        <option value="ALL">Todos los formatos</option>
+        <option value="SC">SC — Supercenter</option>
+        <option value="WME">WME — Walmart Express</option>
+        <option value="BA">BA — Bodega Aurrera</option>
+        <option value="MB">MB — Mi Bodega</option>
+        <option value="BAE">BAE — Bodega Express</option>
+      </select>
+    </div>
+    <div class="perf-table-wrap">
+      <table class="pt" id="perfTable">
+        <thead>
+          <tr>
+            <th rowspan="2" style="text-align:left">SKU</th>
+            <th class="ph" colspan="2">LW — 07/03/26</th>
+            <th class="ph" colspan="2">L4W — 4 semanas</th>
+            <th class="ph" colspan="2">L8W — 8 semanas</th>
+            <th class="ph" colspan="2">YTD 2026</th>
+          </tr>
+          <tr>
+            <th class="ph">Actual</th><th>vs LY</th>
+            <th class="ph">Actual</th><th>vs LY</th>
+            <th class="ph">Actual</th><th>vs LY</th>
+            <th class="ph">Actual</th><th>vs LY</th>
+          </tr>
+        </thead>
+        <tbody id="ptBody"></tbody>
+        <tfoot><tr id="ptFoot"><td colspan="9"></td></tr></tfoot>
+      </table>
+    </div>
+    <div style="margin-top:10px;font-family:var(--font-mono);font-size:9px;color:var(--muted);line-height:1.6;padding:8px 10px;background:var(--bg4);border-radius:6px;border-left:2px solid var(--accent)">
+      LW=07/03/26 | L4W=14-feb al 07-mar | L8W=03-ene al 07-mar | YTD=10 sem 2026 | LY=mismas semanas ene-mar 2025 | ★=SKU nuevo sin LY comparable | Fuente: Scintilla Tendencias
+    </div>
   </div>
 
-  <!-- SELL-OUT PIEZAS por SKU-FORMATO -->
-  <div class="section-label" style="margin-top:4px">Sell-out piezas por SKU × Formato — YTD 2026 (Feb–Mar)</div>
-  <div class="panel" style="overflow-x:auto;margin-bottom:16px">
-    <table class="data-table">
-      <thead>
-        <tr><th>SKU</th><th class="r">B3 Feb</th><th class="r">B3 Mar</th><th class="r b3-total">B3 Total</th><th class="r">S2 Feb</th><th class="r">S2 Mar</th><th class="r s2-total">S2 Total</th><th class="r grand">TOTAL</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Fresa Kiwi 630ml</td><td class="r mono">84,451</td><td class="r mono">60,066</td><td class="r mono bold b3-total">144,517</td><td class="r mono">25,665</td><td class="r mono">29,515</td><td class="r mono bold s2-total">55,180</td><td class="r mono bold grand">199,697</td></tr>
-        <tr><td>Uva 630ml</td><td class="r mono">34,939</td><td class="r mono">25,462</td><td class="r mono bold b3-total">60,401</td><td class="r mono">25,238</td><td class="r mono">20,712</td><td class="r mono bold s2-total">45,950</td><td class="r mono bold grand">106,351</td></tr>
-        <tr><td>Mora Azul 630ml</td><td class="r mono">35,434</td><td class="r mono">24,218</td><td class="r mono bold b3-total">59,652</td><td class="r mono">23,466</td><td class="r mono">19,691</td><td class="r mono bold s2-total">43,157</td><td class="r mono bold grand">102,809</td></tr>
-        <tr><td>Fresa Frutos Rojos 630ml</td><td class="r mono">31,128</td><td class="r mono">24,143</td><td class="r mono bold b3-total">55,271</td><td class="r mono">24,673</td><td class="r mono">19,929</td><td class="r mono bold s2-total">44,602</td><td class="r mono bold grand">99,873</td></tr>
-        <tr><td>Lima Limón 630ml</td><td class="r mono">23,924</td><td class="r mono">18,312</td><td class="r mono bold b3-total">42,236</td><td class="r mono">22,248</td><td class="r mono">18,369</td><td class="r mono bold s2-total">40,617</td><td class="r mono bold grand">82,853</td></tr>
-        <tr><td>Coco 630ml</td><td class="r mono">24,818</td><td class="r mono">19,392</td><td class="r mono bold b3-total">44,210</td><td class="r mono">17,285</td><td class="r mono">16,418</td><td class="r mono bold s2-total">33,703</td><td class="r mono bold grand">77,913</td></tr>
-        <tr><td>Manzana 630ml</td><td class="r mono">23,166</td><td class="r mono">17,418</td><td class="r mono bold b3-total">40,584</td><td class="r mono">19,840</td><td class="r mono">17,421</td><td class="r mono bold s2-total">37,261</td><td class="r mono bold grand">77,845</td></tr>
-        <tr><td>Naranja Mandarina 630ml</td><td class="r mono">21,079</td><td class="r mono">15,038</td><td class="r mono bold b3-total">36,117</td><td class="r mono">19,438</td><td class="r mono">15,701</td><td class="r mono bold s2-total">35,139</td><td class="r mono bold grand">71,256</td></tr>
-        <tr><td>Uva Mora Azul 630ml</td><td class="r mono">19,886</td><td class="r mono">17,265</td><td class="r mono bold b3-total">37,151</td><td class="r mono">13,830</td><td class="r mono">13,754</td><td class="r mono bold s2-total">27,584</td><td class="r mono bold grand">64,735</td></tr>
-        <tr><td>Coco Piña 630ml</td><td class="r mono">9,785</td><td class="r mono">13,012</td><td class="r mono bold b3-total">22,797</td><td class="r mono">7,272</td><td class="r mono">10,386</td><td class="r mono bold s2-total">17,658</td><td class="r mono bold grand">40,455</td></tr>
-        <tr><td>Manzana Limón 630ml (Vit.)</td><td class="r mono">10,851</td><td class="r mono">8,967</td><td class="r mono bold b3-total">19,818</td><td class="r mono">9,125</td><td class="r mono">8,742</td><td class="r mono bold s2-total">17,867</td><td class="r mono bold grand">37,685</td></tr>
-        <tr><td>Naranja Mango 630ml (Vit.)</td><td class="r mono">11,882</td><td class="r mono">8,536</td><td class="r mono bold b3-total">20,418</td><td class="r mono">9,341</td><td class="r mono">8,048</td><td class="r mono bold s2-total">17,389</td><td class="r mono bold grand">37,807</td></tr>
-      </tbody>
-    </table>
+
+  <!-- PROMO CALCULATOR -->
+  <div class="section-label" style="margin-top:28px">Calculadora de costo promocional</div>
+  <div class="panel" style="margin-bottom:16px">
+
+    <!-- FILA 1: PVP inputs + derivados -->
+    <div class="calc-grid">
+      <div class="calc-input-box">
+        <div class="cib-label">PVP Regular c/IVA</div>
+        <div style="display:flex;align-items:baseline">
+          <span class="peso-prefix">$</span>
+          <input class="calc-inp" id="pvpReg" type="number" step="0.5" min="0" placeholder="25.00" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub" id="pvpRegSIVA">s/IVA: —</div>
+      </div>
+      <div class="calc-input-box">
+        <div class="cib-label">PVP Promo c/IVA</div>
+        <div style="display:flex;align-items:baseline">
+          <span class="peso-prefix">$</span>
+          <input class="calc-inp" id="pvpPromo" type="number" step="0.5" min="0" placeholder="20.00" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub" id="pvpPromoSIVA">s/IVA: —</div>
+      </div>
+      <div class="calc-input-box highlight">
+        <div class="cib-label">Aportación / pza c/IVA</div>
+        <div class="cib-val amber" id="aportCiva">$—</div>
+        <div class="cib-sub">Diferencial al consumidor</div>
+      </div>
+      <div class="calc-input-box highlight">
+        <div class="cib-label">Aportación / pza s/IVA</div>
+        <div class="cib-val accent" id="aportSiva">$—</div>
+        <div class="cib-sub">Lo que paga Genomma a WM</div>
+      </div>
+    </div>
+
+    <!-- FILA 2: Mecánica + descripción -->
+    <div class="calc-select-row">
+      <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Mecánica:</span>
+      <select class="mecanica-sel" id="mecSel" onchange="setMecanica()">
+        <option value="P5K">Promo 5000 — pieza desplazada</option>
+        <option value="RB">RB (Rollback / Revaluación)</option>
+        <option value="MA">Multiahorro (MA)</option>
+      </select>
+      <span class="mecanica-badge mb-p5k" id="mecBadge">PROMO 5000</span>
+    </div>
+    <div class="mec-desc" id="mecDesc">
+      <strong>Promo 5000:</strong> Pago a pieza desplazada. Genomma aporta (PVP regular s/IVA − PVP promo s/IVA) por cada pieza que Walmart vende durante el período. Sin revaluación de inventario.
+    </div>
+
+    <!-- INPUTS ESPECÍFICOS POR MECÁNICA -->
+    <!-- PROMO 5000 -->
+    <div class="calc-extra" id="extP5K">
+      <div class="calc-input-box">
+        <div class="cib-label">Piezas estimadas a vender</div>
+        <div style="display:flex;align-items:baseline">
+          <input class="calc-inp" id="p5kPiezas" type="number" step="100" min="0" placeholder="20,000" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub">Estimado de sell-out en el período</div>
+      </div>
+      <div class="calc-input-box highlight">
+        <div class="cib-label">Costo total Promo 5000</div>
+        <div class="cib-val accent" id="p5kTotal">$—</div>
+        <div class="cib-sub">Piezas × aportación s/IVA</div>
+      </div>
+      <div class="calc-input-box" style="background:transparent;border-color:transparent"></div>
+    </div>
+
+    <!-- RB / REVALUACIÓN -->
+    <div class="calc-extra rb-extra hidden" id="extRB">
+      <div class="calc-input-box">
+        <div class="cib-label">Piezas IOH actuales</div>
+        <div style="display:flex;align-items:baseline">
+          <input class="calc-inp" id="rbIOH" type="number" step="100" min="0" placeholder="135,000" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub">Inventario en mano a revaluar</div>
+      </div>
+      <div class="calc-input-box">
+        <div class="cib-label">Piezas a vender (EDI)</div>
+        <div style="display:flex;align-items:baseline">
+          <input class="calc-inp" id="rbPiezas" type="number" step="100" min="0" placeholder="20,000" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub">Facturación estimada en el período</div>
+      </div>
+      <div class="calc-input-box">
+        <div class="cib-label">Costo Genomma / pza (s/IVA)</div>
+        <div style="display:flex;align-items:baseline">
+          <span class="peso-prefix">$</span>
+          <input class="calc-inp" id="rbCosto" type="number" step="0.01" min="0" placeholder="15.03" oninput="calcPromo()" style="font-size:18px">
+        </div>
+        <div class="cib-sub">Para calcular margen WM y EDI</div>
+      </div>
+    </div>
+
+    <!-- MULTIAHORRO -->
+    <div class="calc-extra ma-extra hidden" id="extMA">
+      <div class="calc-input-box">
+        <div class="cib-label">Piezas estimadas a vender</div>
+        <div style="display:flex;align-items:baseline">
+          <input class="calc-inp" id="maPiezas" type="number" step="100" min="0" placeholder="20,000" oninput="calcPromo()">
+        </div>
+        <div class="cib-sub">Estimado total del período</div>
+      </div>
+      <div class="calc-input-box">
+        <div class="cib-label">% de Redención estimada</div>
+        <div style="display:flex;align-items:baseline">
+          <input class="calc-inp" id="maRedencion" type="number" step="1" min="0" max="100" placeholder="62" oninput="calcPromo()" style="font-size:20px">
+          <span style="font-family:var(--font-head);font-size:18px;color:var(--muted);margin-left:4px">%</span>
+        </div>
+        <div class="cib-sub">Porcentaje de piezas redimidas</div>
+      </div>
+      <div class="calc-input-box highlight">
+        <div class="cib-label">Piezas redimidas (calc.)</div>
+        <div class="cib-val amber" id="maPiezasRed">—</div>
+        <div class="cib-sub">Piezas × redención%</div>
+      </div>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div class="calc-results" id="calcResults">
+      <div class="cr-title" id="crTitle">Resultado — Promo 5000</div>
+      <div id="crRows">
+        <div class="cr-row"><span class="cr-label">Configura los campos para ver el cálculo</span><span class="cr-val">—</span></div>
+      </div>
+    </div>
+
+    <!-- EXTRA: Margen WM (siempre visible si hay precios) -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px">
+      <div class="calc-input-box" style="padding:10px 14px">
+        <div class="cib-label">Margen WM con promo</div>
+        <div class="cib-val" id="mgnWM" style="font-size:18px">—</div>
+        <div class="cib-sub">Min recomendado: 10%</div>
+      </div>
+      <div class="calc-input-box" style="padding:10px 14px">
+        <div class="cib-label">Ganancia WM / pza s/IVA</div>
+        <div class="cib-val" id="ganWM" style="font-size:18px">—</div>
+        <div class="cib-sub">PVP promo s/IVA − costo</div>
+      </div>
+      <div class="calc-input-box" style="padding:10px 14px">
+        <div class="cib-label">Descuento vs PVP regular</div>
+        <div class="cib-val" id="descPct" style="font-size:18px">—</div>
+        <div class="cib-sub">Impacto al consumidor</div>
+      </div>
+    </div>
   </div>
 
   <!-- CHAT -->
@@ -812,6 +1031,72 @@ C) Ahorro (subir BA a $20): ahorro ~$680k/mes, viable solo si Electrolit afloja 
 4. Naranja-Mandarina (crítico en MB por falta de traite)
 5. Lima-Limón
 6. Mora Azul
+
+
+
+## DATOS DE TODA LA CATEGORÍA DE HIDRATACIÓN — WALMART MÉXICO
+(Fuente: Scintilla Tendencias | LW = semana 07/03/26 | Presentación homologada)
+(Nota: Suerox grava IVA 16% — su PVP c/IVA se calcula multiplicando el precio s/IVA × 1.16. Electrolit, Gatorlyte, Electrolife, Flashlyte y demás son exentos de IVA.)
+
+## 625-630ML | SOM, PVP c/IVA y Uds/sem | LW=07/03/26
+
+  SC:
+    SUEROX: SOM 10.1% (Δ-2.2pp vs PW), PVP $21.60 c/IVA, 44,774 uds/sem prom
+    ELECTROLIT: SOM 70.2% (Δ+3.0pp vs PW), PVP $23.07 c/IVA, 184,189 uds/sem prom
+    GATORLYTE: SOM 5.5% (Δ-0.4pp vs PW), PVP $16.34 c/IVA, 19,402 uds/sem prom
+    ELECTROLIFE: SOM 10.4% (Δ-0.4pp vs PW), PVP $23.08 c/IVA, 30,367 uds/sem prom
+    FLASHLYTE: SOM 3.8% (Δ+0.0pp vs PW), PVP $18.88 c/IVA, 10,649 uds/sem prom
+
+  WME:
+    SUEROX: SOM 8.1% (Δ-0.6pp vs PW), PVP $21.89 c/IVA, 7,370 uds/sem prom
+    ELECTROLIT: SOM 70.1% (Δ+0.8pp vs PW), PVP $22.69 c/IVA, 39,551 uds/sem prom
+    GATORLYTE: SOM 2.5% (Δ-0.2pp vs PW), PVP $16.23 c/IVA, 1,941 uds/sem prom
+    ELECTROLIFE: SOM 18.8% (Δ+0.1pp vs PW), PVP $23.19 c/IVA, 12,169 uds/sem prom
+    FLASHLYTE: SOM 0.5% (Δ+0.0pp vs PW), PVP $18.73 c/IVA, 524 uds/sem prom
+
+  BA:
+    SUEROX: SOM 7.9% (Δ-2.4pp vs PW), PVP $19.40 c/IVA, 43,217 uds/sem prom
+    ELECTROLIT: SOM 78.6% (Δ+5.0pp vs PW), PVP $20.44 c/IVA, 270,902 uds/sem prom
+    GATORLYTE: SOM 5.6% (Δ-1.0pp vs PW), PVP $16.28 c/IVA, 23,495 uds/sem prom
+    ELECTROLIFE: SOM 5.0% (Δ-1.1pp vs PW), PVP $23.05 c/IVA, 21,069 uds/sem prom
+    FLASHLYTE: SOM 2.9% (Δ-0.5pp vs PW), PVP $17.90 c/IVA, 11,983 uds/sem prom
+
+  MB:
+    SUEROX: SOM 8.8% (Δ-2.2pp vs PW), PVP $19.86 c/IVA, 13,854 uds/sem prom
+    ELECTROLIT: SOM 88.3% (Δ+2.7pp vs PW), PVP $20.80 c/IVA, 83,896 uds/sem prom
+    GATORLYTE: SOM 1.9% (Δ-0.2pp vs PW), PVP $16.88 c/IVA, 2,100 uds/sem prom
+    FLASHLYTE: SOM 0.9% (Δ-0.3pp vs PW), PVP $17.92 c/IVA, 1,682 uds/sem prom
+
+  BAE:
+    SUEROX: SOM 10.1% (Δ-1.8pp vs PW), PVP $19.94 c/IVA, 13,849 uds/sem prom
+    ELECTROLIT: SOM 89.9% (Δ+1.9pp vs PW), PVP $21.37 c/IVA, 81,612 uds/sem prom
+
+## 1000 ML | SOM y Uds/sem
+
+  SC: SUEROX 16.9% 1,641 uds/sem | ELECTROLIT 75.6% $35.56 9,235 uds/sem
+  BA: SUEROX 10.8% 2,208 uds/sem | ELECTROLIT 82.9% $35.73 20,737 uds/sem
+
+## 300-355 ML | ELECTROLIT domina 100% todos los formatos
+  SC: 28,622 uds/sem $15.15 | BA: 44,080 uds/sem $14.92
+
+## DETALLE POR SKU 625-630ml | Promedio 8 semanas 2026
+
+  SUEROX SC: FRESA KIWI 5,692 | FRESA FRUTOS ROJOS 5,172 | UVA 4,982 | MORA AZUL 4,748 | LIMA LIMON 4,375 | MANZANA 4,034 | NARANJA MANDARINA 4,029 | COCO 3,378 | UVA MORA 2,647 | NARANJA MANGO 2,137 | MANZANA LIMON 1,865 | COCO PINA 1,534 uds/sem
+
+  SUEROX B3: FRESA KIWI 21,998 | MORA AZUL 7,038 | UVA 6,941 | FRESA FRUTOS ROJOS 5,657 | COCO 5,071 | LIMA LIMON 4,527 | MANZANA 4,456 | UVA MORA 4,336 | NARANJA MANDARINA 4,146 | MANZANA LIMON 2,346 | NARANJA MANGO 2,123 | COCO PINA 1,940 uds/sem
+
+  ELECTROLIT SC: UVA 27,562 | COCO 26,307 | MORA AZUL 23,402 | FRESA KIWI 21,458 | LIMA LIMON 21,237 | NARANJA MANDARINA 16,207 | FRESA 15,678 | MANZANA 12,947 | PONCHE FRUTAS 10,778 | PIÑA 4,361 | HORCHATA 4,251 uds/sem
+
+  ELECTROLIT B3: UVA 84,243 | COCO 80,384 | FRESA 62,376 | MORA AZUL 58,351 | FRESA KIWI 35,913 | LIMA LIMON 33,467 | NARANJA MANDARINA 25,562 | PONCHE FRUTAS 23,221 | MANZANA 21,315 | PIÑA 6,535 | HORCHATA 5,038 uds/sem
+
+  GATORLYTE SC: NARANJA 4,838 | MORAS 4,086 | UVA 3,382 | FRESA KIWI 3,113 | COCO 2,146 | FRUTAS TROPICALES 1,838 uds/sem
+  GATORLYTE B3: UVA 5,673 | NARANJA 5,520 | MORAS 5,458 | FRESA KIWI 3,984 | COCO 2,906 | FRUTAS TROPICALES 2,054 uds/sem
+
+  ELECTROLIFE SC: FRESA KIWI 5,389 | UVA 5,316 | NARANJA MANDARINA 5,003 | MORA AZUL 4,644 | PONCHE FRUTAS 4,172 | FRAMBUESA AZUL 3,272 | COCO 2,570 uds/sem
+  ELECTROLIFE B3: UVA 3,770 | FRESA KIWI 3,693 | MORA AZUL 3,296 | PONCHE FRUTAS 2,821 | NARANJA MANDARINA 2,722 | FRAMBUESA AZUL 2,410 | COCO 2,359 uds/sem
+
+  FLASHLYTE SC: FRESA 2,871 | UVA 2,704 | SANDIA 2,584 | COCO 2,490 uds/sem
+  FLASHLYTE B3: FRESA 3,869 | UVA 3,465 | SANDIA 3,344 | COCO 3,013 uds/sem
 
 Sé ejecutivo, cita siempre datos concretos. Si alguien pregunta algo fuera del scope de Suerox WM México, responde que tu especialización es el canal Walmart México para Suerox. Máximo 250 palabras por respuesta a menos que se pida detalle extendido.`;
 
@@ -1033,6 +1318,244 @@ function renderSomChart() {
 }
 
 window.addEventListener('load', () => { renderSomChart(); });
+</script>
+
+<script>
+const PERF_DATA={"SC": {"SUEROX AD COCO PINA 630ML": {"Ventas $": {"lw": 49989.0, "l4w": 152897.0, "l8w": 201574.0, "ytd": 201574.0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 2662, "l4w": 9106, "l8w": 12276, "ytd": 12276, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO 8IONES FRESA 630 ML": {"Ventas $": {"lw": 948.0, "l4w": 5180.0, "l8w": 11009.0, "ytd": 14664.0, "ly_lw": 1849.0, "ly_l4w": 111719.0, "ly_l8w": 239186.0, "ly_ytd": 320741.0, "pct_lw": -48.7, "pct_l4w": -95.4, "pct_l8w": -95.4, "pct_ytd": -95.4}, "Unidades": {"lw": 46, "l4w": 252, "l8w": 573, "ytd": 778, "ly_lw": 96, "ly_l4w": 5777, "ly_l8w": 12688, "ly_ytd": 17172, "pct_lw": -52.1, "pct_l4w": -95.6, "pct_l8w": -95.5, "pct_ytd": -95.5}}, "SUEROX ADULTO 8IONES FRESA MENTA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 10276.0, "ly_l8w": 17119.0, "ly_ytd": 20905.0, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 528, "ly_l8w": 896, "ly_ytd": 1105, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX ADULTO COCO": {"Ventas $": {"lw": 56188.0, "l4w": 248362.0, "l8w": 431566.0, "ytd": 511906.0, "ly_lw": 37876.0, "ly_l4w": 192525.0, "ly_l8w": 403741.0, "ly_ytd": 544316.0, "pct_lw": 48.3, "pct_l4w": 29.0, "pct_l8w": 6.9, "pct_ytd": -6.0}, "Unidades": {"lw": 2985, "l4w": 15126, "l8w": 27026, "ytd": 32226, "ly_lw": 2263, "ly_l4w": 10532, "ly_l8w": 21973, "ly_ytd": 29721, "pct_lw": 31.9, "pct_l4w": 43.6, "pct_l8w": 23.0, "pct_ytd": 8.4}}, "SUEROX ADULTO FRESA KIWI 630 ML": {"Ventas $": {"lw": 81643.0, "l4w": 399465.0, "l8w": 724344.0, "ytd": 882767.0, "ly_lw": 67766.0, "ly_l4w": 324422.0, "ly_l8w": 635682.0, "ly_ytd": 832011.0, "pct_lw": 20.5, "pct_l4w": 23.1, "pct_l8w": 13.9, "pct_ytd": 6.1}, "Unidades": {"lw": 4341, "l4w": 24442, "l8w": 45540, "ytd": 55803, "ly_lw": 4095, "ly_l4w": 18471, "ly_l8w": 35400, "ly_ytd": 46261, "pct_lw": 6.0, "pct_l4w": 32.3, "pct_l8w": 28.6, "pct_ytd": 20.6}}, "SUEROX ADULTO LIMA LIMON 630 ML": {"Ventas $": {"lw": 71761.0, "l4w": 319954.0, "l8w": 561361.0, "ytd": 667515.0, "ly_lw": 51617.0, "ly_l4w": 322848.0, "ly_l8w": 653307.0, "ly_ytd": 867756.0, "pct_lw": 39.0, "pct_l4w": -0.9, "pct_l8w": -14.1, "pct_ytd": -23.1}, "Unidades": {"lw": 3803, "l4w": 19411, "l8w": 34997, "ytd": 41821, "ly_lw": 3097, "ly_l4w": 17956, "ly_l8w": 35797, "ly_ytd": 47562, "pct_lw": 22.8, "pct_l4w": 8.1, "pct_l8w": -2.2, "pct_ytd": -12.1}}, "SUEROX ADULTO MANZANA 630 ML": {"Ventas $": {"lw": 66230.0, "l4w": 285126.0, "l8w": 514645.0, "ytd": 623499.0, "ly_lw": 48588.0, "ly_l4w": 243023.0, "ly_l8w": 485260.0, "ly_ytd": 638447.0, "pct_lw": 36.3, "pct_l4w": 17.3, "pct_l8w": 6.1, "pct_ytd": -2.3}, "Unidades": {"lw": 3527, "l4w": 17358, "l8w": 32270, "ytd": 39325, "ly_lw": 2965, "ly_l4w": 13773, "ly_l8w": 26947, "ly_ytd": 35396, "pct_lw": 19.0, "pct_l4w": 26.0, "pct_l8w": 19.8, "pct_ytd": 11.1}}, "SUEROX ADULTO MORA AZUL 630 ML": {"Ventas $": {"lw": 71565.0, "l4w": 337254.0, "l8w": 604391.0, "ytd": 738130.0, "ly_lw": 61241.0, "ly_l4w": 325967.0, "ly_l8w": 658403.0, "ly_ytd": 877090.0, "pct_lw": 16.9, "pct_l4w": 3.5, "pct_l8w": -8.2, "pct_ytd": -15.8}, "Unidades": {"lw": 3809, "l4w": 20626, "l8w": 37983, "ytd": 46657, "ly_lw": 3662, "ly_l4w": 18494, "ly_l8w": 36531, "ly_ytd": 48595, "pct_lw": 4.0, "pct_l4w": 11.5, "pct_l8w": 4.0, "pct_ytd": -4.0}}, "SUEROX ADULTO NARANJA MANDARINA 630 ML": {"Ventas $": {"lw": 59353.0, "l4w": 274757.0, "l8w": 514386.0, "ytd": 631036.0, "ly_lw": 52955.0, "ly_l4w": 296687.0, "ly_l8w": 606194.0, "ly_ytd": 791077.0, "pct_lw": 12.1, "pct_l4w": -7.4, "pct_l8w": -15.1, "pct_ytd": -20.2}, "Unidades": {"lw": 3151, "l4w": 16716, "l8w": 32231, "ytd": 39773, "ly_lw": 3184, "ly_l4w": 16721, "ly_l8w": 33551, "ly_ytd": 43756, "pct_lw": -1.0, "pct_l4w": -0.0, "pct_l8w": -3.9, "pct_ytd": -9.1}}, "SUEROX ADULTO UVA 630 ML": {"Ventas $": {"lw": 76116.0, "l4w": 359866.0, "l8w": 637275.0, "ytd": 769581.0, "ly_lw": 63161.0, "ly_l4w": 279403.0, "ly_l8w": 558309.0, "ly_ytd": 739002.0, "pct_lw": 20.5, "pct_l4w": 28.8, "pct_l8w": 14.1, "pct_ytd": 4.1}, "Unidades": {"lw": 4044, "l4w": 21916, "l8w": 39857, "ytd": 48395, "ly_lw": 3799, "ly_l4w": 15614, "ly_l8w": 30712, "ly_ytd": 40637, "pct_lw": 6.4, "pct_l4w": 40.4, "pct_l8w": 29.8, "pct_ytd": 19.1}}, "SUEROX ALOE VERA 630ML": {"Ventas $": {"lw": 1371.0, "l4w": 7729.0, "l8w": 17159.0, "ytd": 23467.0, "ly_lw": 3228.0, "ly_l4w": 144299.0, "ly_l8w": 303274.0, "ly_ytd": 405775.0, "pct_lw": -57.5, "pct_l4w": -94.6, "pct_l8w": -94.3, "pct_ytd": -94.2}, "Unidades": {"lw": 67, "l4w": 386, "l8w": 878, "ytd": 1201, "ly_lw": 162, "ly_l4w": 7921, "ly_l8w": 16583, "ly_ytd": 22242, "pct_lw": -58.6, "pct_l4w": -95.1, "pct_l8w": -94.7, "pct_ytd": -94.6}}, "SUEROX BEBIDA NARANJA MANGO 630ML": {"Ventas $": {"lw": 30855.0, "l4w": 148011.0, "l8w": 242200.0, "ytd": 281747.0, "ly_lw": 16893.0, "ly_l4w": 263411.0, "ly_l8w": 505856.0, "ly_ytd": 636878.0, "pct_lw": 82.6, "pct_l4w": -43.8, "pct_l8w": -52.1, "pct_ytd": -55.8}, "Unidades": {"lw": 1750, "l4w": 10091, "l8w": 17095, "ytd": 19932, "ly_lw": 1207, "ly_l4w": 13029, "ly_l8w": 24814, "ly_ytd": 31203, "pct_lw": 45.0, "pct_l4w": -22.5, "pct_l8w": -31.1, "pct_ytd": -36.1}}, "SUEROX BEBIDA SABOR MANZANA LIMON 630ML": {"Ventas $": {"lw": 32488.0, "l4w": 123099.0, "l8w": 217248.0, "ytd": 252115.0, "ly_lw": 14572.0, "ly_l4w": 212486.0, "ly_l8w": 423039.0, "ly_ytd": 540919.0, "pct_lw": 122.9, "pct_l4w": -42.1, "pct_l8w": -48.6, "pct_ytd": -53.4}, "Unidades": {"lw": 2017, "l4w": 8233, "l8w": 14919, "ytd": 17324, "ly_lw": 957, "ly_l4w": 10523, "ly_l8w": 20762, "ly_ytd": 26510, "pct_lw": 110.8, "pct_l4w": -21.8, "pct_l8w": -28.1, "pct_ytd": -34.7}}, "SUEROX FRESA FRUTOS ROJOS": {"Ventas $": {"lw": 86055.0, "l4w": 369144.0, "l8w": 661175.0, "ytd": 791838.0, "ly_lw": 59200.0, "ly_l4w": 269912.0, "ly_l8w": 571316.0, "ly_ytd": 769709.0, "pct_lw": 45.4, "pct_l4w": 36.8, "pct_l8w": 15.7, "pct_ytd": 2.9}, "Unidades": {"lw": 4578, "l4w": 22429, "l8w": 41372, "ytd": 49848, "ly_lw": 3589, "ly_l4w": 14214, "ly_l8w": 30637, "ly_ytd": 41585, "pct_lw": 27.6, "pct_l4w": 57.8, "pct_l8w": 35.0, "pct_ytd": 19.9}}, "SUEROX FRESA KIWI 1 LT": {"Ventas $": {"lw": 32374.0, "l4w": 113550.0, "l8w": 172986.0, "ytd": 198427.0, "ly_lw": 14178.0, "ly_l4w": 101607.0, "ly_l8w": 200548.0, "ly_ytd": 253800.0, "pct_lw": 128.3, "pct_l4w": 11.8, "pct_l8w": -13.7, "pct_ytd": -21.8}, "Unidades": {"lw": 1304, "l4w": 4558, "l8w": 6804, "ytd": 7704, "ly_lw": 502, "ly_l4w": 4012, "ly_l8w": 7879, "ly_ytd": 10031, "pct_lw": 159.8, "pct_l4w": 13.6, "pct_l8w": -13.6, "pct_ytd": -23.2}}, "SUEROX MORA 1 LT": {"Ventas $": {"lw": 28100.0, "l4w": 102192.0, "l8w": 160919.0, "ytd": 190006.0, "ly_lw": 15462.0, "ly_l4w": 100729.0, "ly_l8w": 199995.0, "ly_ytd": 258317.0, "pct_lw": 81.7, "pct_l4w": 1.5, "pct_l8w": -19.5, "pct_ytd": -26.4}, "Unidades": {"lw": 1128, "l4w": 4110, "l8w": 6323, "ytd": 7349, "ly_lw": 548, "ly_l4w": 4000, "ly_l8w": 7874, "ly_ytd": 10237, "pct_lw": 105.8, "pct_l4w": 2.8, "pct_l8w": -19.7, "pct_ytd": -28.2}}, "SUEROX UVA MORA 630ML": {"Ventas $": {"lw": 47396.0, "l4w": 193616.0, "l8w": 337839.0, "ytd": 402590.0, "ly_lw": 31143.0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 52.2, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 2525, "l4w": 11790, "l8w": 21176, "ytd": 25377, "ly_lw": 1514, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 66.8, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}}, "WME": {"SUEROX AD COCO PINA 630ML": {"Ventas $": {"lw": 0, "l4w": 139.0, "l8w": 139.0, "ytd": 139.0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 9, "l8w": 9, "ytd": 9, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO 8IONES FRESA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 707.0, "ly_l8w": 927.0, "ly_ytd": 1058.0, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 36, "ly_l8w": 48, "ly_ytd": 55, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX ADULTO 8IONES FRESA MENTA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO COCO": {"Ventas $": {"lw": 14413.0, "l4w": 59420.0, "l8w": 105045.0, "ytd": 127063.0, "ly_lw": 9234.0, "ly_l4w": 63447.0, "ly_l8w": 127489.0, "ly_ytd": 164116.0, "pct_lw": 56.1, "pct_l4w": -6.3, "pct_l8w": -17.6, "pct_ytd": -22.6}, "Unidades": {"lw": 763, "l4w": 3590, "l8w": 6546, "ytd": 7969, "ly_lw": 538, "ly_l4w": 3522, "ly_l8w": 6980, "ly_ytd": 8980, "pct_lw": 41.8, "pct_l4w": 1.9, "pct_l8w": -6.2, "pct_ytd": -11.3}}, "SUEROX ADULTO FRESA KIWI 630 ML": {"Ventas $": {"lw": 16910, "l4w": 72235.0, "l8w": 128606.0, "ytd": 156001.0, "ly_lw": 10757.0, "ly_l4w": 96822.0, "ly_l8w": 197426.0, "ly_ytd": 253493.0, "pct_lw": 57.2, "pct_l4w": -25.4, "pct_l8w": -34.9, "pct_ytd": -38.5}, "Unidades": {"lw": 895, "l4w": 4380, "l8w": 8035, "ytd": 9812, "ly_lw": 642, "ly_l4w": 5505, "ly_l8w": 10949, "ly_ytd": 14020, "pct_lw": 39.4, "pct_l4w": -20.4, "pct_l8w": -26.6, "pct_ytd": -30.0}}, "SUEROX ADULTO LIMA LIMON 630 ML": {"Ventas $": {"lw": 12086.0, "l4w": 50284.0, "l8w": 88329.0, "ytd": 108212.0, "ly_lw": 7939.0, "ly_l4w": 38802.0, "ly_l8w": 78304.0, "ly_ytd": 101152.0, "pct_lw": 52.2, "pct_l4w": 29.6, "pct_l8w": 12.8, "pct_ytd": 7.0}, "Unidades": {"lw": 639, "l4w": 3029, "l8w": 5478, "ytd": 6759, "ly_lw": 463, "ly_l4w": 2041, "ly_l8w": 4159, "ly_ytd": 5402, "pct_lw": 38.0, "pct_l4w": 48.4, "pct_l8w": 31.7, "pct_ytd": 25.1}}, "SUEROX ADULTO MANZANA 630 ML": {"Ventas $": {"lw": 13102.0, "l4w": 56674.0, "l8w": 103981.0, "ytd": 127333.0, "ly_lw": 8917.0, "ly_l4w": 73429.0, "ly_l8w": 143666.0, "ly_ytd": 180607.0, "pct_lw": 46.9, "pct_l4w": -22.8, "pct_l8w": -27.6, "pct_ytd": -29.5}, "Unidades": {"lw": 700, "l4w": 3320, "l8w": 6230, "ytd": 7664, "ly_lw": 527, "ly_l4w": 4173, "ly_l8w": 7975, "ly_ytd": 10005, "pct_lw": 32.8, "pct_l4w": -20.4, "pct_l8w": -21.9, "pct_ytd": -23.4}}, "SUEROX ADULTO MORA AZUL 630 ML": {"Ventas $": {"lw": 12309.0, "l4w": 56444.0, "l8w": 104000.0, "ytd": 126548.0, "ly_lw": 10318.0, "ly_l4w": 86418.0, "ly_l8w": 171546.0, "ly_ytd": 219307.0, "pct_lw": 19.3, "pct_l4w": -34.7, "pct_l8w": -39.4, "pct_ytd": -42.3}, "Unidades": {"lw": 654, "l4w": 3440, "l8w": 6518, "ytd": 7977, "ly_lw": 606, "ly_l4w": 4890, "ly_l8w": 9475, "ly_ytd": 12079, "pct_lw": 7.9, "pct_l4w": -29.7, "pct_l8w": -31.2, "pct_ytd": -34.0}}, "SUEROX ADULTO NARANJA MANDARINA 630 ML": {"Ventas $": {"lw": 8970.0, "l4w": 38057.0, "l8w": 69860.0, "ytd": 84350.0, "ly_lw": 6590.0, "ly_l4w": 50957.0, "ly_l8w": 112503.0, "ly_ytd": 148057.0, "pct_lw": 36.1, "pct_l4w": -25.3, "pct_l8w": -37.9, "pct_ytd": -43.0}, "Unidades": {"lw": 475, "l4w": 2293, "l8w": 4355, "ytd": 5292, "ly_lw": 394, "ly_l4w": 2677, "ly_l8w": 6001, "ly_ytd": 7947, "pct_lw": 20.6, "pct_l4w": -14.3, "pct_l8w": -27.4, "pct_ytd": -33.4}}, "SUEROX ADULTO UVA 630 ML": {"Ventas $": {"lw": 14941.0, "l4w": 64510.0, "l8w": 112980.0, "ytd": 134087.0, "ly_lw": 9792.0, "ly_l4w": 72055.0, "ly_l8w": 141162.0, "ly_ytd": 180917.0, "pct_lw": 52.6, "pct_l4w": -10.5, "pct_l8w": -20.0, "pct_ytd": -25.9}, "Unidades": {"lw": 792, "l4w": 3902, "l8w": 7036, "ytd": 8399, "ly_lw": 578, "ly_l4w": 4049, "ly_l8w": 7759, "ly_ytd": 9919, "pct_lw": 37.0, "pct_l4w": -3.6, "pct_l8w": -9.3, "pct_ytd": -15.3}}, "SUEROX ALOE VERA 630ML": {"Ventas $": {"lw": 280.0, "l4w": 1016.0, "l8w": 3577.0, "ytd": 5563.0, "ly_lw": 983.0, "ly_l4w": 32023.0, "ly_l8w": 67673.0, "ly_ytd": 91701.0, "pct_lw": -71.5, "pct_l4w": -96.8, "pct_l8w": -94.7, "pct_ytd": -93.9}, "Unidades": {"lw": 13, "l4w": 48, "l8w": 169, "ytd": 262, "ly_lw": 46, "ly_l4w": 1749, "ly_l8w": 3673, "ly_ytd": 4983, "pct_lw": -71.7, "pct_l4w": -97.3, "pct_l8w": -95.4, "pct_ytd": -94.7}}, "SUEROX BEBIDA NARANJA MANGO 630ML": {"Ventas $": {"lw": 1518.0, "l4w": 4744.0, "l8w": 7862.0, "ytd": 9379.0, "ly_lw": 604.0, "ly_l4w": 45884.0, "ly_l8w": 84680.0, "ly_ytd": 110751.0, "pct_lw": 151.3, "pct_l4w": -89.7, "pct_l8w": -90.7, "pct_ytd": -91.5}, "Unidades": {"lw": 80, "l4w": 278, "l8w": 478, "ytd": 575, "ly_lw": 35, "ly_l4w": 2171, "ly_l8w": 3980, "ly_ytd": 5194, "pct_lw": 128.6, "pct_l4w": -87.2, "pct_l8w": -88.0, "pct_ytd": -88.9}}, "SUEROX BEBIDA SABOR MANZANA LIMON 630ML": {"Ventas $": {"lw": 8358.0, "l4w": 29946.0, "l8w": 53288.0, "ytd": 62878.0, "ly_lw": 4730.0, "ly_l4w": 39956.0, "ly_l8w": 78065.0, "ly_ytd": 100065.0, "pct_lw": 76.7, "pct_l4w": -25.1, "pct_l8w": -31.7, "pct_ytd": -37.2}, "Unidades": {"lw": 442, "l4w": 1776, "l8w": 3285, "ytd": 3904, "ly_lw": 280, "ly_l4w": 1893, "ly_l8w": 3666, "ly_ytd": 4691, "pct_lw": 57.9, "pct_l4w": -6.2, "pct_l8w": -10.4, "pct_ytd": -16.8}}, "SUEROX FRESA FRUTOS ROJOS": {"Ventas $": {"lw": 20593.0, "l4w": 75413.0, "l8w": 135253.0, "ytd": 161225.0, "ly_lw": 11302.0, "ly_l4w": 72529.0, "ly_l8w": 147123.0, "ly_ytd": 190976.0, "pct_lw": 82.2, "pct_l4w": 4.0, "pct_l8w": -8.1, "pct_ytd": -15.6}, "Unidades": {"lw": 1091, "l4w": 4537, "l8w": 8414, "ytd": 10094, "ly_lw": 667, "ly_l4w": 3809, "ly_l8w": 7843, "ly_ytd": 10237, "pct_lw": 63.6, "pct_l4w": 19.1, "pct_l8w": 7.3, "pct_ytd": -1.4}}, "SUEROX FRESA KIWI 1 LT": {"Ventas $": {"lw": 28.0, "l4w": 139.0, "l8w": 196.0, "ytd": 196.0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 1, "l4w": 5, "l8w": 7, "ytd": 7, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX MORA 1 LT": {"Ventas $": {"lw": 0, "l4w": 204.0, "l8w": 445.0, "ytd": 843.0, "ly_lw": 57.0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": -100.0, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 8, "l8w": 17, "ytd": 31, "ly_lw": 2, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": -100.0, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX UVA MORA 630ML": {"Ventas $": {"lw": 6260.0, "l4w": 23339.0, "l8w": 38568.0, "ytd": 42882.0, "ly_lw": 2250.0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 178.2, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 332, "l4w": 1414, "l8w": 2408, "ytd": 2689, "ly_lw": 110, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 201.8, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}}, "BA": {"SUEROX AD COCO PINA 630ML": {"Ventas $": {"lw": 55052, "l4w": 189356.0, "l8w": 249379.0, "ytd": 249379.0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 3217, "l4w": 11663, "l8w": 15516, "ytd": 15516, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO 8IONES FRESA 630 ML": {"Ventas $": {"lw": 1477, "l4w": 8770.0, "l8w": 20185.0, "ytd": 28560.0, "ly_lw": 4495.0, "ly_l4w": 155535.0, "ly_l8w": 327513.0, "ly_ytd": 436025.0, "pct_lw": -67.1, "pct_l4w": -94.4, "pct_l8w": -93.8, "pct_ytd": -93.4}, "Unidades": {"lw": 72, "l4w": 478, "l8w": 1071, "ytd": 1545, "ly_lw": 225, "ly_l4w": 8099, "ly_l8w": 17336, "ly_ytd": 23266, "pct_lw": -68.0, "pct_l4w": -94.1, "pct_l8w": -93.8, "pct_ytd": -93.4}}, "SUEROX ADULTO 8IONES FRESA MENTA 630 ML": {"Ventas $": {"lw": 2.0, "l4w": 53.0, "l8w": 137.0, "ytd": 145.0, "ly_lw": 20.0, "ly_l4w": 99526.0, "ly_l8w": 211214.0, "ly_ytd": 285225.0, "pct_lw": -90.0, "pct_l4w": -99.9, "pct_l8w": -99.9, "pct_ytd": -99.9}, "Unidades": {"lw": 3, "l4w": 58, "l8w": 109, "ytd": 118, "ly_lw": 19, "ly_l4w": 5178, "ly_l8w": 11168, "ly_ytd": 15215, "pct_lw": -84.2, "pct_l4w": -98.9, "pct_l8w": -99.0, "pct_ytd": -99.2}}, "SUEROX ADULTO COCO": {"Ventas $": {"lw": 68184.0, "l4w": 282338.0, "l8w": 469678.0, "ytd": 563351.0, "ly_lw": 45655.0, "ly_l4w": 226344.0, "ly_l8w": 455901.0, "ly_ytd": 608026.0, "pct_lw": 49.3, "pct_l4w": 24.7, "pct_l8w": 3.0, "pct_ytd": -7.3}, "Unidades": {"lw": 3959, "l4w": 17480, "l8w": 29528, "ytd": 35571, "ly_lw": 2713, "ly_l4w": 12595, "ly_l8w": 24913, "ly_ytd": 33219, "pct_lw": 45.9, "pct_l4w": 38.8, "pct_l8w": 18.5, "pct_ytd": 7.1}}, "SUEROX ADULTO FRESA KIWI 630 ML": {"Ventas $": {"lw": 92599.0, "l4w": 408245.0, "l8w": 700787.0, "ytd": 844333.0, "ly_lw": 70896.0, "ly_l4w": 296320.0, "ly_l8w": 622863.0, "ly_ytd": 840567.0, "pct_lw": 30.6, "pct_l4w": 37.8, "pct_l8w": 12.5, "pct_ytd": 0.4}, "Unidades": {"lw": 5642, "l4w": 25974, "l8w": 44947, "ytd": 54243, "ly_lw": 4267, "ly_l4w": 16789, "ly_l8w": 34349, "ly_ytd": 46260, "pct_lw": 32.2, "pct_l4w": 54.7, "pct_l8w": 30.9, "pct_ytd": 17.3}}, "SUEROX ADULTO LIMA LIMON 630 ML": {"Ventas $": {"lw": 65683.0, "l4w": 269719.0, "l8w": 446505.0, "ytd": 536650.0, "ly_lw": 44788.0, "ly_l4w": 130752.0, "ly_l8w": 292182.0, "ly_ytd": 389762.0, "pct_lw": 46.7, "pct_l4w": 106.3, "pct_l8w": 52.8, "pct_ytd": 37.7}, "Unidades": {"lw": 3872, "l4w": 16970, "l8w": 28418, "ytd": 34236, "ly_lw": 2662, "ly_l4w": 6846, "ly_l8w": 15509, "ly_ytd": 20832, "pct_lw": 45.5, "pct_l4w": 147.9, "pct_l8w": 83.2, "pct_ytd": 64.3}}, "SUEROX ADULTO MANZANA 630 ML": {"Ventas $": {"lw": 53371.0, "l4w": 231352.0, "l8w": 403130.0, "ytd": 487836.0, "ly_lw": 41726.0, "ly_l4w": 199537.0, "ly_l8w": 414701.0, "ly_ytd": 551794.0, "pct_lw": 27.9, "pct_l4w": 15.9, "pct_l8w": -2.8, "pct_ytd": -11.6}, "Unidades": {"lw": 3148, "l4w": 14574, "l8w": 25701, "ytd": 31172, "ly_lw": 2492, "ly_l4w": 11376, "ly_l8w": 22939, "ly_ytd": 30438, "pct_lw": 26.3, "pct_l4w": 28.1, "pct_l8w": 12.0, "pct_ytd": 2.4}}, "SUEROX ADULTO MORA AZUL 630 ML": {"Ventas $": {"lw": 81385.0, "l4w": 366657.0, "l8w": 641270.0, "ytd": 773395.0, "ly_lw": 66344.0, "ly_l4w": 359368.0, "ly_l8w": 773821.0, "ly_ytd": 1049733.0, "pct_lw": 22.7, "pct_l4w": 2.0, "pct_l8w": -17.1, "pct_ytd": -26.3}, "Unidades": {"lw": 4830, "l4w": 23130, "l8w": 40912, "ytd": 49439, "ly_lw": 3950, "ly_l4w": 20252, "ly_l8w": 42480, "ly_ytd": 57523, "pct_lw": 22.3, "pct_l4w": 14.2, "pct_l8w": -3.7, "pct_ytd": -14.1}}, "SUEROX ADULTO NARANJA MANDARINA 630 ML": {"Ventas $": {"lw": 53990.0, "l4w": 231308.0, "l8w": 410433.0, "ytd": 503830.0, "ly_lw": 44072.0, "ly_l4w": 245816.0, "ly_l8w": 493944.0, "ly_ytd": 651089.0, "pct_lw": 22.5, "pct_l4w": -5.9, "pct_l8w": -16.9, "pct_ytd": -22.6}, "Unidades": {"lw": 3181, "l4w": 14571, "l8w": 26183, "ytd": 32210, "ly_lw": 2654, "ly_l4w": 14162, "ly_l8w": 27504, "ly_ytd": 36105, "pct_lw": 19.9, "pct_l4w": 2.9, "pct_l8w": -4.8, "pct_ytd": -10.8}}, "SUEROX ADULTO UVA 630 ML": {"Ventas $": {"lw": 91085.0, "l4w": 394999.0, "l8w": 670021.0, "ytd": 803142.0, "ly_lw": 63274.0, "ly_l4w": 291076.0, "ly_l8w": 628744.0, "ly_ytd": 851195.0, "pct_lw": 44.0, "pct_l4w": 35.7, "pct_l8w": 6.6, "pct_ytd": -5.6}, "Unidades": {"lw": 5361, "l4w": 24865, "l8w": 42678, "ytd": 51278, "ly_lw": 3784, "ly_l4w": 16468, "ly_l8w": 34609, "ly_ytd": 46773, "pct_lw": 41.7, "pct_l4w": 51.0, "pct_l8w": 23.3, "pct_ytd": 9.6}}, "SUEROX ALOE VERA 630ML": {"Ventas $": {"lw": 2288.0, "l4w": 11061.0, "l8w": 22232.0, "ytd": 30106.0, "ly_lw": 3291.0, "ly_l4w": 111171.0, "ly_l8w": 240711.0, "ly_ytd": 323700.0, "pct_lw": -30.5, "pct_l4w": -90.1, "pct_l8w": -90.8, "pct_ytd": -90.7}, "Unidades": {"lw": 112, "l4w": 592, "l8w": 1179, "ytd": 1620, "ly_lw": 189, "ly_l4w": 6252, "ly_l8w": 13529, "ly_ytd": 18065, "pct_lw": -40.7, "pct_l4w": -90.5, "pct_l8w": -91.3, "pct_ytd": -91.0}}, "SUEROX BEBIDA NARANJA MANGO 630ML": {"Ventas $": {"lw": 27212, "l4w": 115411.0, "l8w": 198940.0, "ytd": 238803.0, "ly_lw": 19573.0, "ly_l4w": 273400.0, "ly_l8w": 522402.0, "ly_ytd": 651621.0, "pct_lw": 39.0, "pct_l4w": -57.8, "pct_l8w": -61.9, "pct_ytd": -63.4}, "Unidades": {"lw": 1927, "l4w": 9276, "l8w": 15991, "ytd": 19090, "ly_lw": 1348, "ly_l4w": 13630, "ly_l8w": 25685, "ly_ytd": 31941, "pct_lw": 43.0, "pct_l4w": -31.9, "pct_l8w": -37.7, "pct_ytd": -40.2}}, "SUEROX BEBIDA SABOR MANZANA LIMON 630ML": {"Ventas $": {"lw": 24519.0, "l4w": 100728.0, "l8w": 178656.0, "ytd": 216345.0, "ly_lw": 17468.0, "ly_l4w": 171970.0, "ly_l8w": 343444.0, "ly_ytd": 439060.0, "pct_lw": 40.4, "pct_l4w": -41.4, "pct_l8w": -48.0, "pct_ytd": -50.7}, "Unidades": {"lw": 1790, "l4w": 7349, "l8w": 13584, "ytd": 16430, "ly_lw": 1176, "ly_l4w": 8573, "ly_l8w": 16878, "ly_ytd": 21515, "pct_lw": 52.2, "pct_l4w": -14.3, "pct_l8w": -19.5, "pct_ytd": -23.6}}, "SUEROX FRESA FRUTOS ROJOS": {"Ventas $": {"lw": 79858.0, "l4w": 340635.0, "l8w": 573021.0, "ytd": 684697.0, "ly_lw": 50833.0, "ly_l4w": 229854.0, "ly_l8w": 497886.0, "ly_ytd": 684447.0, "pct_lw": 57.1, "pct_l4w": 48.2, "pct_l8w": 15.1, "pct_ytd": 0.0}, "Unidades": {"lw": 4638, "l4w": 20987, "l8w": 35884, "ytd": 43087, "ly_lw": 3050, "ly_l4w": 12098, "ly_l8w": 26509, "ly_ytd": 36720, "pct_lw": 52.1, "pct_l4w": 73.5, "pct_l8w": 35.4, "pct_ytd": 17.3}}, "SUEROX FRESA KIWI 1 LT": {"Ventas $": {"lw": 42501.0, "l4w": 142796.0, "l8w": 221511.0, "ytd": 258369.0, "ly_lw": 19554.0, "ly_l4w": 191438.0, "ly_l8w": 372259.0, "ly_ytd": 474408.0, "pct_lw": 117.4, "pct_l4w": -25.4, "pct_l8w": -40.5, "pct_ytd": -45.5}, "Unidades": {"lw": 1697, "l4w": 5671, "l8w": 8606, "ytd": 9907, "ly_lw": 691, "ly_l4w": 7540, "ly_l8w": 14569, "ly_ytd": 18668, "pct_lw": 145.6, "pct_l4w": -24.8, "pct_l8w": -40.9, "pct_ytd": -46.9}}, "SUEROX MORA 1 LT": {"Ventas $": {"lw": 41235.0, "l4w": 147626.0, "l8w": 234739.0, "ytd": 278106.0, "ly_lw": 23418.0, "ly_l4w": 204552.0, "ly_l8w": 401574.0, "ly_ytd": 510021.0, "pct_lw": 76.1, "pct_l4w": -27.8, "pct_l8w": -41.5, "pct_ytd": -45.5}, "Unidades": {"lw": 1636, "l4w": 5826, "l8w": 9061, "ytd": 10592, "ly_lw": 826, "ly_l4w": 8095, "ly_l8w": 15754, "ly_ytd": 20105, "pct_lw": 98.1, "pct_l4w": -28.0, "pct_l8w": -42.5, "pct_ytd": -47.3}}, "SUEROX UVA MORA 630ML": {"Ventas $": {"lw": 58805.0, "l4w": 232144.0, "l8w": 380901.0, "ytd": 456201.0, "ly_lw": 36435.0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 61.4, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 3443, "l4w": 14428, "l8w": 24034, "ytd": 28924, "ly_lw": 1794, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": 91.9, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}}, "MB": {"SUEROX ADULTO 8IONES FRESA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 278.0, "ly_ytd": 355.0, "pct_lw": null, "pct_l4w": null, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 14, "ly_ytd": 18, "pct_lw": null, "pct_l4w": null, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX ADULTO 8IONES FRESA MENTA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 40.0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 2, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": -100.0}}, "SUEROX ADULTO COCO": {"Ventas $": {"lw": 25747.0, "l4w": 100959.0, "l8w": 174393.0, "ytd": 210603.0, "ly_lw": 19500.0, "ly_l4w": 82094.0, "ly_l8w": 161416.0, "ly_ytd": 206665.0, "pct_lw": 32.0, "pct_l4w": 23.0, "pct_l8w": 8.0, "pct_ytd": 1.9}, "Unidades": {"lw": 1497, "l4w": 6282, "l8w": 11039, "ytd": 13384, "ly_lw": 1139, "ly_l4w": 4333, "ly_l8w": 8351, "ly_ytd": 10642, "pct_lw": 31.4, "pct_l4w": 45.0, "pct_l8w": 32.2, "pct_ytd": 25.8}}, "SUEROX ADULTO FRESA KIWI 630 ML": {"Ventas $": {"lw": 43434.0, "l4w": 171420.0, "l8w": 316345.0, "ytd": 385084.0, "ly_lw": 38467.0, "ly_l4w": 211072.0, "ly_l8w": 406079.0, "ly_ytd": 508844.0, "pct_lw": 12.9, "pct_l4w": -18.8, "pct_l8w": -22.1, "pct_ytd": -24.3}, "Unidades": {"lw": 2534, "l4w": 10693, "l8w": 20245, "ytd": 24704, "ly_lw": 2219, "ly_l4w": 11148, "ly_l8w": 21074, "ly_ytd": 26308, "pct_lw": 14.2, "pct_l4w": -4.1, "pct_l8w": -3.9, "pct_ytd": -6.1}}, "SUEROX ADULTO LIMA LIMON 630 ML": {"Ventas $": {"lw": 18543.0, "l4w": 68363.0, "l8w": 123416.0, "ytd": 150522.0, "ly_lw": 14737.0, "ly_l4w": 74705.0, "ly_l8w": 153012.0, "ly_ytd": 199393.0, "pct_lw": 25.8, "pct_l4w": -8.5, "pct_l8w": -19.3, "pct_ytd": -24.5}, "Unidades": {"lw": 1080, "l4w": 4250, "l8w": 7802, "ytd": 9554, "ly_lw": 853, "ly_l4w": 3910, "ly_l8w": 7879, "ly_ytd": 10230, "pct_lw": 26.6, "pct_l4w": 8.7, "pct_l8w": -1.0, "pct_ytd": -6.6}}, "SUEROX ADULTO MANZANA 630 ML": {"Ventas $": {"lw": 23257.0, "l4w": 88496.0, "l8w": 156143.0, "ytd": 190541.0, "ly_lw": 20070.0, "ly_l4w": 100134.0, "ly_l8w": 187450.0, "ly_ytd": 235819.0, "pct_lw": 15.9, "pct_l4w": -11.6, "pct_l8w": -16.7, "pct_ytd": -19.2}, "Unidades": {"lw": 1353, "l4w": 5507, "l8w": 9945, "ytd": 12168, "ly_lw": 1156, "ly_l4w": 5309, "ly_l8w": 9751, "ly_ytd": 12210, "pct_lw": 17.0, "pct_l4w": 3.7, "pct_l8w": 2.0, "pct_ytd": -0.3}}, "SUEROX ADULTO MORA AZUL 630 ML": {"Ventas $": {"lw": 31071.0, "l4w": 136638.0, "l8w": 242241.0, "ytd": 294977.0, "ly_lw": 27753.0, "ly_l4w": 150886.0, "ly_l8w": 295618.0, "ly_ytd": 381071.0, "pct_lw": 12.0, "pct_l4w": -9.4, "pct_l8w": -18.1, "pct_ytd": -22.6}, "Unidades": {"lw": 1810, "l4w": 8547, "l8w": 15391, "ytd": 18808, "ly_lw": 1574, "ly_l4w": 7942, "ly_l8w": 15292, "ly_ytd": 19623, "pct_lw": 15.0, "pct_l4w": 7.6, "pct_l8w": 0.6, "pct_ytd": -4.2}}, "SUEROX ADULTO NARANJA MANDARINA 630 ML": {"Ventas $": {"lw": 14921.0, "l4w": 61252.0, "l8w": 110616.0, "ytd": 136065.0, "ly_lw": 12927.0, "ly_l4w": 48149.0, "ly_l8w": 94815.0, "ly_ytd": 121749.0, "pct_lw": 15.4, "pct_l4w": 27.2, "pct_l8w": 16.7, "pct_ytd": 11.8}, "Unidades": {"lw": 864, "l4w": 3803, "l8w": 6983, "ytd": 8613, "ly_lw": 753, "ly_l4w": 2566, "ly_l8w": 4931, "ly_ytd": 6301, "pct_lw": 14.7, "pct_l4w": 48.2, "pct_l8w": 41.6, "pct_ytd": 36.7}}, "SUEROX ADULTO UVA 630 ML": {"Ventas $": {"lw": 29207.0, "l4w": 118165.0, "l8w": 203559.0, "ytd": 245467.0, "ly_lw": 21536.0, "ly_l4w": 114614.0, "ly_l8w": 221976.0, "ly_ytd": 281852.0, "pct_lw": 35.6, "pct_l4w": 3.1, "pct_l8w": -8.3, "pct_ytd": -12.9}, "Unidades": {"lw": 1691, "l4w": 7330, "l8w": 12846, "ytd": 15548, "ly_lw": 1250, "ly_l4w": 6132, "ly_l8w": 11570, "ly_ytd": 14607, "pct_lw": 35.3, "pct_l4w": 19.5, "pct_l8w": 11.0, "pct_ytd": 6.4}}, "SUEROX ALOE VERA 630ML": {"Ventas $": {"lw": 1088.0, "l4w": 3700.0, "l8w": 7507.0, "ytd": 11388.0, "ly_lw": 1645.0, "ly_l4w": 33239.0, "ly_l8w": 71296.0, "ly_ytd": 91397.0, "pct_lw": -33.9, "pct_l4w": -88.9, "pct_l8w": -89.5, "pct_ytd": -87.5}, "Unidades": {"lw": 53, "l4w": 181, "l8w": 388, "ytd": 588, "ly_lw": 80, "ly_l4w": 1688, "ly_l8w": 3617, "ly_ytd": 4640, "pct_lw": -33.8, "pct_l4w": -89.3, "pct_l8w": -89.3, "pct_ytd": -87.3}}, "SUEROX BEBIDA NARANJA MANGO 630ML": {"Ventas $": {"lw": 716.0, "l4w": 4212.0, "l8w": 15210.0, "ytd": 23409.0, "ly_lw": 5824.0, "ly_l4w": 179692.0, "ly_l8w": 347070.0, "ly_ytd": 444157.0, "pct_lw": -87.7, "pct_l4w": -97.7, "pct_l8w": -95.6, "pct_ytd": -94.7}, "Unidades": {"lw": 42, "l4w": 270, "l8w": 993, "ytd": 1524, "ly_lw": 339, "ly_l4w": 8968, "ly_l8w": 17086, "ly_ytd": 21802, "pct_lw": -87.6, "pct_l4w": -97.0, "pct_l8w": -94.2, "pct_ytd": -93.0}}, "SUEROX BEBIDA SABOR MANZANA LIMON 630ML": {"Ventas $": {"lw": 10354.0, "l4w": 37619.0, "l8w": 71160.0, "ytd": 89998.0, "ly_lw": 10930.0, "ly_l4w": 155550.0, "ly_l8w": 306453.0, "ly_ytd": 392184.0, "pct_lw": -5.3, "pct_l4w": -75.8, "pct_l8w": -76.8, "pct_ytd": -77.1}, "Unidades": {"lw": 666, "l4w": 2679, "l8w": 5185, "ytd": 6503, "ly_lw": 699, "ly_l4w": 7755, "ly_l8w": 15071, "ly_ytd": 19237, "pct_lw": -4.7, "pct_l4w": -65.5, "pct_l8w": -65.6, "pct_ytd": -66.2}}, "SUEROX FRESA FRUTOS ROJOS": {"Ventas $": {"lw": 21646.0, "l4w": 85826.0, "l8w": 147993.0, "ytd": 177945.0, "ly_lw": 15375.0, "ly_l4w": 62219.0, "ly_l8w": 121680.0, "ly_ytd": 156100.0, "pct_lw": 40.8, "pct_l4w": 37.9, "pct_l8w": 21.6, "pct_ytd": 14.0}, "Unidades": {"lw": 1260, "l4w": 5339, "l8w": 9367, "ytd": 11304, "ly_lw": 883, "ly_l4w": 3262, "ly_l8w": 6276, "ly_ytd": 8023, "pct_lw": 42.7, "pct_l4w": 63.7, "pct_l8w": 49.3, "pct_ytd": 40.9}}, "SUEROX FRESA KIWI 1 LT": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 16.0, "ly_l8w": 42.0, "ly_ytd": 320.0, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 1, "ly_l8w": 2, "ly_ytd": 13, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX MORA 1 LT": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 302.0, "ly_l8w": 328.0, "ly_ytd": 634.0, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 12, "ly_l8w": 13, "ly_ytd": 25, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX UVA MORA 630ML": {"Ventas $": {"lw": 26545.0, "l4w": 96934.0, "l8w": 167838.0, "ytd": 204719.0, "ly_lw": 21508.0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 20.0, "pct_lw": 23.4, "pct_l4w": null, "pct_l8w": null, "pct_ytd": 1023495.0}, "Unidades": {"lw": 1550, "l4w": 6049, "l8w": 10652, "ytd": 13047, "ly_lw": 1046, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 1, "pct_lw": 48.2, "pct_l4w": null, "pct_l8w": null, "pct_ytd": 1304600.0}}}, "BAE": {"SUEROX ADULTO 8IONES FRESA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO COCO": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO FRESA KIWI 630 ML": {"Ventas $": {"lw": 226759.0, "l4w": 1003320.0, "l8w": 1751427.0, "ytd": 2070201.0, "ly_lw": 182630.0, "ly_l4w": 883050.0, "ly_l8w": 1886025.0, "ly_ytd": 2440761.0, "pct_lw": 24.2, "pct_l4w": 13.6, "pct_l8w": -7.1, "pct_ytd": -15.2}, "Unidades": {"lw": 13188, "l4w": 62460, "l8w": 110793, "ytd": 131385, "ly_lw": 10076, "ly_l4w": 46412, "ly_l8w": 97216, "ly_ytd": 125300, "pct_lw": 30.9, "pct_l4w": 34.6, "pct_l8w": 14.0, "pct_ytd": 4.9}}, "SUEROX ADULTO MANZANA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO MORA AZUL 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO NARANJA MANDARINA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}, "SUEROX ADULTO UVA 630 ML": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 17.0, "ly_l8w": 17.0, "ly_ytd": 17.0, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 1, "ly_l8w": 1, "ly_ytd": 1, "pct_lw": null, "pct_l4w": -100.0, "pct_l8w": -100.0, "pct_ytd": -100.0}}, "SUEROX FRESA FRUTOS ROJOS": {"Ventas $": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}, "Unidades": {"lw": 0, "l4w": 0, "l8w": 0, "ytd": 0, "ly_lw": 0, "ly_l4w": 0, "ly_l8w": 0, "ly_ytd": 0, "pct_lw": null, "pct_l4w": null, "pct_l8w": null, "pct_ytd": null}}}};
+const SLABELS={
+  "SUEROX ADULTO 8IONES FRESA 630 ML":"Fresa 630ml",
+  "SUEROX ADULTO 8IONES FRESA MENTA 630 ML":"Fresa Menta 630ml",
+  "SUEROX ADULTO COCO":"Coco 630ml",
+  "SUEROX ADULTO FRESA KIWI 630 ML":"Fresa Kiwi 630ml",
+  "SUEROX ADULTO LIMA LIMON 630 ML":"Lima Limón 630ml",
+  "SUEROX ADULTO MANZANA 630 ML":"Manzana 630ml",
+  "SUEROX ADULTO MORA AZUL 630 ML":"Mora Azul 630ml",
+  "SUEROX ADULTO NARANJA MANDARINA 630 ML":"Naranja Mandarina 630ml",
+  "SUEROX ADULTO UVA 630 ML":"Uva 630ml",
+  "SUEROX ALOE VERA 630ML":"Aloe Vera 630ml",
+  "SUEROX BEBIDA NARANJA MANGO 630ML":"Naranja Mango 630ml (Vit.)",
+  "SUEROX BEBIDA SABOR MANZANA LIMON 630ML":"Manzana Limón 630ml (Vit.)",
+  "SUEROX FRESA FRUTOS ROJOS":"Fresa Frutos Rojos 630ml",
+  "SUEROX FRESA KIWI 1 LT":"Fresa Kiwi 1L",
+  "SUEROX MORA 1 LT":"Mora Azul 1L",
+  "SUEROX AD COCO PINA 630ML":"Coco Piña 630ml",
+  "SUEROX UVA MORA 630ML":"Uva Mora 630ml",
+  "SUEROX ADULTO FRESA 630 ML":"Fresa 630ml"
+};
+const FMTS_ALL=['SC','WME','BA','MB','BAE'];
+let perfMetric='valor';
+
+function setMetric(m,btn){
+  perfMetric=m;
+  document.querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPerfTable();
+}
+
+function mkey(){ return perfMetric==='valor'?'Ventas $':'Unidades'; }
+
+function fmtN(v,isV){
+  if(v===null||v===undefined||v===0) return '—';
+  if(isV) return '$'+Math.round(v).toLocaleString('es-MX');
+  return Math.round(v).toLocaleString('es-MX');
+}
+
+function fmtP(p){
+  if(p===null||p===undefined) return {t:'N/D',c:'nd'};
+  const s=p>=0?'+':'';
+  const c=p>=5?'pos':p<=-5?'neg':'neu';
+  return {t:s+p.toFixed(1)+'%',c};
+}
+
+function aggFmts(fmts,sku,mk){
+  const r={lw:0,l4w:0,l8w:0,ytd:0,ly_lw:0,ly_l4w:0,ly_l8w:0,ly_ytd:0};
+  fmts.forEach(fs=>{
+    const d=PERF_DATA[fs]?.[sku]?.[mk];
+    if(!d)return;
+    ['lw','l4w','l8w','ytd','ly_lw','ly_l4w','ly_l8w','ly_ytd'].forEach(k=>r[k]+=(d[k]||0));
+  });
+  ['lw','l4w','l8w','ytd'].forEach(p=>{ r['pct_'+p]=r['ly_'+p]>0?Math.round((r[p]/r['ly_'+p]-1)*1000)/10:null; });
+  return r;
+}
+
+function getAllSkus(){
+  const s=new Set();
+  FMTS_ALL.forEach(fs=>{ if(PERF_DATA[fs]) Object.keys(PERF_DATA[fs]).forEach(k=>s.add(k)); });
+  return Array.from(s);
+}
+
+function renderPerfTable(){
+  const fv=document.getElementById('fmtSel').value;
+  const fmts=fv==='ALL'?FMTS_ALL:[fv];
+  const mk=mkey(); const isV=perfMetric==='valor';
+
+  const skus=getAllSkus();
+  const rows=skus.map(sku=>{
+    const d=aggFmts(fmts,sku,mk);
+    return {sku,d,ytd:d.ytd||0};
+  }).filter(r=>r.ytd>0).sort((a,b)=>b.ytd-a.ytd);
+
+  const body=document.getElementById('ptBody');
+  body.innerHTML='';
+  const tot={lw:0,l4w:0,l8w:0,ytd:0,ly_lw:0,ly_l4w:0,ly_l8w:0,ly_ytd:0};
+
+  rows.forEach(({sku,d})=>{
+    ['lw','l4w','l8w','ytd','ly_lw','ly_l4w','ly_l8w','ly_ytd'].forEach(k=>tot[k]+=(d[k]||0));
+    const isNew=!d.ly_ytd||d.ly_ytd===0;
+    const lbl=(SLABELS[sku]||sku.replace('SUEROX ADULTO ','').replace('SUEROX ','')).replace('★','').trim();
+    const badge=isNew?'<span class="new-sk">★nuevo</span>':'';
+    const ps=['lw','l4w','l8w','ytd'];
+    let cells='';
+    ps.forEach((p,i)=>{
+      const pv=fmtP(d['pct_'+p]);
+      const bc=i===0?'bc':'';
+      cells+=`<td class="n ${bc}">${fmtN(d[p],isV)}</td><td class="p ${pv.c}">${pv.t}</td>`;
+    });
+    body.innerHTML+=`<tr><td>${lbl}${badge}</td>${cells}</tr>`;
+  });
+
+  ['lw','l4w','l8w','ytd'].forEach(p=>{ tot['pct_'+p]=tot['ly_'+p]>0?Math.round((tot[p]/tot['ly_'+p]-1)*1000)/10:null; });
+  let fc=`<td>TOTAL ${fv==='ALL'?'TODOS':fv}</td>`;
+  ['lw','l4w','l8w','ytd'].forEach((p,i)=>{
+    const pv=fmtP(tot['pct_'+p]);
+    fc+=`<td class="n ${i===0?'bc':''}">${fmtN(tot[p],isV)}</td><td class="p ${pv.c}">${pv.t}</td>`;
+  });
+  document.getElementById('ptFoot').innerHTML=fc;
+}
+
+window.addEventListener('load',()=>{
+  setTimeout(renderPerfTable, 200);
+});
+</script>
+
+<script>
+const COSTO_WM_DEFAULT = 15.03;
+const IVA = 1.16;
+
+function setMecanica(){
+  const m = document.getElementById('mecSel').value;
+  const badge = document.getElementById('mecBadge');
+  const desc  = document.getElementById('mecDesc');
+  const descs = {
+    P5K: '<strong>Promo 5000:</strong> Pago a pieza desplazada. Genomma aporta (PVP regular s/IVA − PVP promo s/IVA) por cada pieza que Walmart vende. Sin revaluación de inventario.',
+    RB:  '<strong>RB / Revaluación:</strong> Dos componentes: (1) Revaluación del IOH existente × aportación a PVP. (2) EDI: aportación a costo por cada pieza facturada durante el período, para mantener el margen del cliente constante.',
+    MA:  '<strong>Multiahorro:</strong> Pago por las piezas que efectivamente se redentan. Costo total = piezas estimadas × redención% × aportación s/IVA.'
+  };
+  const badges = {
+    P5K: {txt:'PROMO 5000', cls:'mb-p5k'},
+    RB:  {txt:'ROLLBACK / RB', cls:'mb-rb'},
+    MA:  {txt:'MULTIAHORRO', cls:'mb-ma'},
+  };
+  badge.textContent = badges[m].txt;
+  badge.className = 'mecanica-badge ' + badges[m].cls;
+  desc.innerHTML = descs[m];
+  ['extP5K','extRB','extMA'].forEach(id => document.getElementById(id).classList.add('hidden'));
+  document.getElementById('ext'+m).classList.remove('hidden');
+  calcPromo();
+}
+
+function getNum(id, def){ const v=parseFloat(document.getElementById(id).value); return isNaN(v)?def:v; }
+
+function fmt$(v){ if(!v&&v!==0) return '—'; return '$'+Math.round(v).toLocaleString('es-MX'); }
+function fmtD(v){ if(!v&&v!==0) return '—'; return '$'+v.toFixed(2); }
+function fmtP(v){ if(!v&&v!==0) return '—'; return v.toFixed(1)+'%'; }
+
+function calcPromo(){
+  const pvpReg   = getNum('pvpReg', 0);
+  const pvpPromo = getNum('pvpPromo', 0);
+  const m = document.getElementById('mecSel').value;
+
+  // PVP s/IVA (Suerox grava IVA 16%)
+  const pvpRegSIVA   = pvpReg   / IVA;
+  const pvpPromoSIVA = pvpPromo / IVA;
+  const aportCiva    = pvpReg   - pvpPromo;
+  const aportSiva    = pvpRegSIVA - pvpPromoSIVA;
+  const descPct      = pvpReg > 0 ? (aportCiva/pvpReg*100) : 0;
+
+  // Display derived values
+  document.getElementById('pvpRegSIVA').textContent   = pvpReg   > 0 ? 's/IVA: $'+pvpRegSIVA.toFixed(2)   : 's/IVA: —';
+  document.getElementById('pvpPromoSIVA').textContent = pvpPromo > 0 ? 's/IVA: $'+pvpPromoSIVA.toFixed(2) : 's/IVA: —';
+  document.getElementById('aportCiva').textContent    = pvpReg>0&&pvpPromo>0 ? fmtD(aportCiva) : '$—';
+  document.getElementById('aportSiva').textContent    = pvpReg>0&&pvpPromo>0 ? fmtD(aportSiva) : '$—';
+  document.getElementById('descPct').textContent      = descPct > 0 ? '-'+fmtP(descPct) : '—';
+
+  // Margen WM (necesita costo; si hay input de costo en RB usarlo, si no default)
+  const costoWM = m==='RB' ? getNum('rbCosto', COSTO_WM_DEFAULT) : COSTO_WM_DEFAULT;
+  const ganWM   = pvpPromo > 0 ? pvpPromoSIVA - costoWM : null;
+  const mgnWM   = pvpPromo > 0 && pvpPromoSIVA > 0 ? (ganWM/pvpPromoSIVA*100) : null;
+  const mgnEl = document.getElementById('mgnWM');
+  mgnEl.textContent = mgnWM !== null ? fmtP(mgnWM) : '—';
+  mgnEl.className   = 'cib-val ' + (mgnWM===null?'':mgnWM>=15?'green':mgnWM>=8?'amber':'red');
+  mgnEl.style.fontSize = '18px';
+  document.getElementById('ganWM').textContent = ganWM !== null ? fmtD(ganWM) : '—';
+
+  const crRows = document.getElementById('crRows');
+  const crTitle = document.getElementById('crTitle');
+
+  if(pvpReg<=0||pvpPromo<=0||pvpPromo>=pvpReg){
+    crRows.innerHTML = '<div class="cr-row"><span class="cr-label">Ingresa PVP regular y PVP promo (promo debe ser menor que regular)</span><span class="cr-val">—</span></div>';
+    return;
+  }
+
+  // ── PROMO 5000 ──
+  if(m==='P5K'){
+    crTitle.textContent = 'Resultado — Promo 5000 (pieza desplazada)';
+    const piezas = getNum('p5kPiezas', 0);
+    const total  = piezas * aportSiva;
+    document.getElementById('p5kTotal').textContent = piezas>0 ? fmt$(total) : '$—';
+    if(piezas<=0){ crRows.innerHTML='<div class="cr-row"><span class="cr-label">Ingresa las piezas estimadas a vender</span><span class="cr-val">—</span></div>'; return; }
+    crRows.innerHTML = `
+      <div class="cr-row"><span class="cr-label">PVP regular s/IVA</span><span class="cr-val">${fmtD(pvpRegSIVA)}/pza</span></div>
+      <div class="cr-row"><span class="cr-label">PVP promo s/IVA</span><span class="cr-val">${fmtD(pvpPromoSIVA)}/pza</span></div>
+      <div class="cr-row"><span class="cr-label">Aportación por pieza s/IVA</span><span class="cr-val">${fmtD(aportSiva)}/pza</span></div>
+      <div class="cr-row"><span class="cr-label">Piezas estimadas a desplazar</span><span class="cr-val">${piezas.toLocaleString('es-MX')}</span></div>
+      <div class="cr-row total-row"><span class="cr-label">COSTO TOTAL PROMO 5000</span><span class="cr-val">${fmt$(total)}</span></div>`;
+  }
+
+  // ── RB / REVALUACIÓN ──
+  else if(m==='RB'){
+    crTitle.textContent = 'Resultado — RB / Revaluación';
+    const ioh     = getNum('rbIOH', 0);
+    const piezas  = getNum('rbPiezas', 0);
+    const costo   = getNum('rbCosto', COSTO_WM_DEFAULT);
+    if(ioh<=0){ crRows.innerHTML='<div class="cr-row"><span class="cr-label">Ingresa el IOH actual y piezas a vender</span><span class="cr-val">—</span></div>'; return; }
+    // Revaluación IOH = IOH × aportación a PVP (s/IVA)
+    const costoReval = ioh * aportSiva;
+    // EDI = piezas facturadas × aportación a costo (para mantener margen WM)
+    // Aportación EDI = PVP promo s/IVA - costo × (PVP promo s/IVA / PVP reg s/IVA)
+    // Simplificado: ajuste de costo = costo × (aportSiva / pvpRegSIVA)
+    const aportEDI    = costo * (aportSiva / pvpRegSIVA);
+    const costoEDI    = piezas * aportEDI;
+    const costoTotal  = costoReval + costoEDI;
+    crRows.innerHTML = `
+      <div class="cr-row"><span class="cr-label">Aportación por pieza s/IVA (revaluación IOH)</span><span class="cr-val">${fmtD(aportSiva)}/pza</span></div>
+      <div class="cr-row"><span class="cr-label">IOH a revaluar × aportación</span><span class="cr-val">${ioh.toLocaleString('es-MX')} uds × ${fmtD(aportSiva)}</span></div>
+      <div class="cr-row"><span class="cr-label">Costo revaluación IOH</span><span class="cr-val">${fmt$(costoReval)}</span></div>
+      <div class="cr-row edi-row"><span class="cr-label">Aportación EDI / pza (ajuste costo a finanzas)</span><span class="cr-val">${fmtD(aportEDI)}/pza</span></div>
+      <div class="cr-row edi-row"><span class="cr-label">Piezas a facturar × aportación EDI</span><span class="cr-val">${piezas.toLocaleString('es-MX')} uds × ${fmtD(aportEDI)}</span></div>
+      <div class="cr-row edi-row"><span class="cr-label">Costo EDI (aportación a finanzas vía facturación)</span><span class="cr-val">${fmt$(costoEDI)}</span></div>
+      <div class="cr-row total-row"><span class="cr-label">COSTO TOTAL RB (Reval. + EDI)</span><span class="cr-val">${fmt$(costoTotal)}</span></div>`;
+  }
+
+  // ── MULTIAHORRO ──
+  else if(m==='MA'){
+    crTitle.textContent = 'Resultado — Multiahorro (redención)';
+    const piezas     = getNum('maPiezas', 0);
+    const redencion  = getNum('maRedencion', 0) / 100;
+    const piezasRed  = Math.round(piezas * redencion);
+    document.getElementById('maPiezasRed').textContent = piezasRed > 0 ? piezasRed.toLocaleString('es-MX') : '—';
+    if(piezas<=0||redencion<=0){ crRows.innerHTML='<div class="cr-row"><span class="cr-label">Ingresa piezas estimadas y % de redención</span><span class="cr-val">—</span></div>'; return; }
+    const costoTotal = piezasRed * aportSiva;
+    const costoSinRed = piezas * aportSiva;
+    crRows.innerHTML = `
+      <div class="cr-row"><span class="cr-label">Aportación por pieza s/IVA</span><span class="cr-val">${fmtD(aportSiva)}/pza</span></div>
+      <div class="cr-row"><span class="cr-label">Piezas estimadas totales</span><span class="cr-val">${piezas.toLocaleString('es-MX')}</span></div>
+      <div class="cr-row"><span class="cr-label">Redención aplicada</span><span class="cr-val">${(redencion*100).toFixed(0)}% → ${piezasRed.toLocaleString('es-MX')} pzas redimidas</span></div>
+      <div class="cr-row"><span class="cr-label">Costo sin redención (referencia)</span><span class="cr-val">${fmt$(costoSinRed)}</span></div>
+      <div class="cr-row"><span class="cr-label">Ahorro por no-redención</span><span class="cr-val">${fmt$(costoSinRed-costoTotal)}</span></div>
+      <div class="cr-row total-row"><span class="cr-label">COSTO TOTAL MA (solo pzas redimidas)</span><span class="cr-val">${fmt$(costoTotal)}</span></div>`;
+  }
+}
 </script>
 </body>
 </html>
