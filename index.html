@@ -302,6 +302,33 @@ footer {
 /* responsive */
 @media(max-width:900px){ .main-grid{grid-template-columns:1fr} .kpi-grid{grid-template-columns:repeat(3,1fr)} }
 @media(max-width:600px){ .kpi-grid{grid-template-columns:repeat(2,1fr)} .status-bar{flex-wrap:wrap;gap:8px} }
+
+/* ── DATA TABLES ── */
+.data-table { width:100%; border-collapse:collapse; font-size:11px; min-width:600px; }
+.data-table th {
+  background:var(--bg4); color:var(--muted);
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+  padding:8px 10px; text-align:left; border-bottom:1px solid var(--border2); white-space:nowrap;
+}
+.data-table td { padding:7px 10px; border-bottom:1px solid var(--border); color:var(--text); }
+.data-table tr:hover td { background:rgba(255,255,255,.02); }
+.data-table .r { text-align:right; }
+.data-table .mono { font-family:var(--font-mono); }
+.data-table .bold { font-weight:600; }
+.data-table .lw { background:rgba(0,212,168,.06); color:var(--accent); font-weight:600; }
+.data-table .b3-total { background:rgba(52,211,153,.05); color:#34D399; }
+.data-table .s2-total { background:rgba(96,165,250,.05); color:#60A5FA; }
+.data-table .grand { background:rgba(255,255,255,.04); color:var(--text); font-weight:700; }
+.sx-row td { background:rgba(0,212,168,.02); }
+.el-row td { background:rgba(255,176,32,.02); }
+.sep-row td { height:6px; background:transparent; border:none; }
+.fmt-cell { text-align:center; }
+.marca-sx { color:var(--accent); font-weight:500; font-family:var(--font-mono); font-size:10px; }
+.marca-el { color:var(--amber); font-weight:500; font-family:var(--font-mono); font-size:10px; }
+.trend-neg { color:var(--red); font-family:var(--font-mono); font-size:10px; }
+.trend-pos { color:var(--amber); font-family:var(--font-mono); font-size:10px; }
+.bar-wrap { width:120px; height:6px; background:var(--bg4); border-radius:3px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:3px; background:rgba(0,212,168,.5); }
 </style>
 </head>
 <body>
@@ -383,7 +410,7 @@ footer {
 
       <div class="diag-row">
         <div><span class="fmt-badge fmt-s2">SC S2</span></div>
-        <div class="diag-problem"><strong>Ejecución en anaquel</strong>Electrolit gana visibilidad en piso. Precio $21 estable.</div>
+        <div class="diag-problem"><strong>SOM en caída sin causa confirmada</strong>OOS 0%, DN 99.4%, DOS 74d — no es inventario ni distribución. Ejecución pendiente de verificación en campo.</div>
         <div class="diag-val">74.6d / 0%</div>
         <div class="diag-val green">99.4% ✓</div>
       </div>
@@ -479,6 +506,121 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+
+
+  <!-- SOM TREND TABLE -->
+  <div class="section-label" style="margin-top:28px">SOM tendencia — últimas 8 semanas | Suerox vs Electrolit por formato</div>
+  <div class="panel" style="overflow-x:auto;margin-bottom:16px">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Formato</th><th>Marca</th>
+          <th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th><th>S9</th><th>S10</th><th class="lw">S11 LW</th>
+          <th>Tendencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="sx-row"><td rowspan="2" class="fmt-cell"><span class="fmt-badge fmt-s2">SC</span></td>
+          <td class="marca-sx">Suerox</td>
+          <td>9.6</td><td>9.6</td><td>9.7</td><td>10.2</td><td>10.3</td><td>11.5</td><td>10.7</td><td class="lw">9.0</td>
+          <td class="trend-cell trend-neg">▼ -1.7pp</td></tr>
+        <tr class="el-row">
+          <td class="marca-el">Electrolit</td>
+          <td>68.4</td><td>68.4</td><td>68.9</td><td>68.7</td><td>67.7</td><td>66.3</td><td>66.0</td><td class="lw">68.3</td>
+          <td class="trend-cell trend-pos">▲ +2.3pp</td></tr>
+        <tr class="sep-row"><td colspan="11"></td></tr>
+
+        <tr class="sx-row"><td rowspan="2" class="fmt-cell"><span class="fmt-badge fmt-s2">WME</span></td>
+          <td class="marca-sx">Suerox</td>
+          <td>7.3</td><td>7.8</td><td>8.1</td><td>7.8</td><td>7.7</td><td>8.1</td><td>7.9</td><td class="lw">7.4</td>
+          <td class="trend-cell trend-neg">▼ -0.5pp</td></tr>
+        <tr class="el-row">
+          <td class="marca-el">Electrolit</td>
+          <td>66.1</td><td>67.0</td><td>68.3</td><td>68.8</td><td>67.7</td><td>66.2</td><td>68.3</td><td class="lw">68.9</td>
+          <td class="trend-cell trend-pos">▲ +2.7pp</td></tr>
+        <tr class="sep-row"><td colspan="11"></td></tr>
+
+        <tr class="sx-row"><td rowspan="2" class="fmt-cell"><span class="fmt-badge fmt-b3">BA</span></td>
+          <td class="marca-sx">Suerox</td>
+          <td>7.1</td><td>7.3</td><td>7.3</td><td>7.4</td><td>7.9</td><td>10.1</td><td>9.0</td><td class="lw">7.2</td>
+          <td class="trend-cell trend-neg">▼ -1.8pp</td></tr>
+        <tr class="el-row">
+          <td class="marca-el">Electrolit</td>
+          <td>79.4</td><td>78.7</td><td>77.8</td><td>76.4</td><td>73.5</td><td>74.9</td><td>78.7</td><td class="lw">74.9</td>
+          <td class="trend-cell trend-pos">▲ +4.6pp</td></tr>
+        <tr class="sep-row"><td colspan="11"></td></tr>
+
+        <tr class="sx-row"><td rowspan="2" class="fmt-cell"><span class="fmt-badge fmt-alert">MB</span></td>
+          <td class="marca-sx">Suerox</td>
+          <td>10.2</td><td>9.9</td><td>9.5</td><td>9.3</td><td>10.7</td><td>10.1</td><td>10.4</td><td class="lw">8.4</td>
+          <td class="trend-cell trend-neg">▼ -2.0pp</td></tr>
+        <tr class="el-row">
+          <td class="marca-el">Electrolit</td>
+          <td>84.3</td><td>84.7</td><td>85.2</td><td>85.6</td><td>84.0</td><td>84.7</td><td>84.4</td><td class="lw">87.2</td>
+          <td class="trend-cell trend-pos">▲ +2.8pp</td></tr>
+        <tr class="sep-row"><td colspan="11"></td></tr>
+
+        <tr class="sx-row"><td rowspan="2" class="fmt-cell"><span class="fmt-badge fmt-b3">BAE</span></td>
+          <td class="marca-sx">Suerox</td>
+          <td>9.7</td><td>9.7</td><td>10.1</td><td>10.9</td><td>8.8</td><td>9.3</td><td>10.9</td><td class="lw">9.3</td>
+          <td class="trend-cell trend-neg">▼ -1.6pp</td></tr>
+        <tr class="el-row">
+          <td class="marca-el">Electrolit</td>
+          <td>88.7</td><td>88.3</td><td>88.6</td><td>88.2</td><td>87.2</td><td>89.1</td><td>87.2</td><td class="lw">89.2</td>
+          <td class="trend-cell trend-pos">▲ +2.0pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SELL-OUT VALOR por SKU-MES -->
+  <div class="section-label" style="margin-top:4px">Sell-out $ por SKU — Febrero y Marzo 2026 (acumulado ambos canales)</div>
+  <div class="panel" style="overflow-x:auto;margin-bottom:16px">
+    <table class="data-table">
+      <thead>
+        <tr><th>SKU</th><th class="r">Feb 2026</th><th class="r">Mar 2026 (parcial)</th><th class="r">Total YTD</th><th>Participación</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fresa Kiwi 630ml</td><td class="r mono">$1,800,756</td><td class="r mono">$1,396,329</td><td class="r mono bold">$3,197,085</td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--accent)"></div></div></td></tr>
+        <tr><td>Uva 630ml</td><td class="r mono">$757,052</td><td class="r mono">$638,188</td><td class="r mono bold">$1,395,240</td><td><div class="bar-wrap"><div class="bar-fill" style="width:44%"></div></div></td></tr>
+        <tr><td>Mora Azul 630ml</td><td class="r mono">$761,849</td><td class="r mono">$589,290</td><td class="r mono bold">$1,351,139</td><td><div class="bar-wrap"><div class="bar-fill" style="width:42%"></div></div></td></tr>
+        <tr><td>Fresa Frutos Rojos 630ml</td><td class="r mono">$692,871</td><td class="r mono">$590,662</td><td class="r mono bold">$1,283,532</td><td><div class="bar-wrap"><div class="bar-fill" style="width:40%"></div></div></td></tr>
+        <tr><td>Lima Limón 630ml</td><td class="r mono">$569,612</td><td class="r mono">$486,513</td><td class="r mono bold">$1,056,125</td><td><div class="bar-wrap"><div class="bar-fill" style="width:33%"></div></div></td></tr>
+        <tr><td>Coco 630ml</td><td class="r mono">$540,918</td><td class="r mono">$470,363</td><td class="r mono bold">$1,011,281</td><td><div class="bar-wrap"><div class="bar-fill" style="width:32%"></div></div></td></tr>
+        <tr><td>Manzana 630ml</td><td class="r mono">$529,440</td><td class="r mono">$446,151</td><td class="r mono bold">$975,591</td><td><div class="bar-wrap"><div class="bar-fill" style="width:31%"></div></div></td></tr>
+        <tr><td>Naranja Mandarina 630ml</td><td class="r mono">$515,038</td><td class="r mono">$407,635</td><td class="r mono bold">$922,673</td><td><div class="bar-wrap"><div class="bar-fill" style="width:29%"></div></div></td></tr>
+        <tr><td>Uva Mora Azul 630ml</td><td class="r mono">$431,812</td><td class="r mono">$415,185</td><td class="r mono bold">$846,998</td><td><div class="bar-wrap"><div class="bar-fill" style="width:26%"></div></div></td></tr>
+        <tr><td>Coco Piña 630ml</td><td class="r mono">$234,066</td><td class="r mono">$327,024</td><td class="r mono bold">$561,090</td><td><div class="bar-wrap"><div class="bar-fill" style="width:18%"></div></div></td></tr>
+        <tr><td>Manzana Limón 630ml (Vitamins)</td><td class="r mono">$230,088</td><td class="r mono">$200,871</td><td class="r mono bold">$430,959</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
+        <tr><td>Naranja Mango 630ml (Vitamins)</td><td class="r mono">$233,044</td><td class="r mono">$193,485</td><td class="r mono bold">$426,529</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
+        <tr><td>Fresa Kiwi 1L</td><td class="r mono">$190,691</td><td class="r mono">$220,766</td><td class="r mono bold">$411,457</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
+        <tr><td>Mora Azul 1L</td><td class="r mono">$196,428</td><td class="r mono">$211,439</td><td class="r mono bold">$407,866</td><td><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SELL-OUT PIEZAS por SKU-FORMATO -->
+  <div class="section-label" style="margin-top:4px">Sell-out piezas por SKU × Formato — YTD 2026 (Feb–Mar)</div>
+  <div class="panel" style="overflow-x:auto;margin-bottom:16px">
+    <table class="data-table">
+      <thead>
+        <tr><th>SKU</th><th class="r">B3 Feb</th><th class="r">B3 Mar</th><th class="r b3-total">B3 Total</th><th class="r">S2 Feb</th><th class="r">S2 Mar</th><th class="r s2-total">S2 Total</th><th class="r grand">TOTAL</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fresa Kiwi 630ml</td><td class="r mono">84,451</td><td class="r mono">60,066</td><td class="r mono bold b3-total">144,517</td><td class="r mono">25,665</td><td class="r mono">29,515</td><td class="r mono bold s2-total">55,180</td><td class="r mono bold grand">199,697</td></tr>
+        <tr><td>Uva 630ml</td><td class="r mono">34,939</td><td class="r mono">25,462</td><td class="r mono bold b3-total">60,401</td><td class="r mono">25,238</td><td class="r mono">20,712</td><td class="r mono bold s2-total">45,950</td><td class="r mono bold grand">106,351</td></tr>
+        <tr><td>Mora Azul 630ml</td><td class="r mono">35,434</td><td class="r mono">24,218</td><td class="r mono bold b3-total">59,652</td><td class="r mono">23,466</td><td class="r mono">19,691</td><td class="r mono bold s2-total">43,157</td><td class="r mono bold grand">102,809</td></tr>
+        <tr><td>Fresa Frutos Rojos 630ml</td><td class="r mono">31,128</td><td class="r mono">24,143</td><td class="r mono bold b3-total">55,271</td><td class="r mono">24,673</td><td class="r mono">19,929</td><td class="r mono bold s2-total">44,602</td><td class="r mono bold grand">99,873</td></tr>
+        <tr><td>Lima Limón 630ml</td><td class="r mono">23,924</td><td class="r mono">18,312</td><td class="r mono bold b3-total">42,236</td><td class="r mono">22,248</td><td class="r mono">18,369</td><td class="r mono bold s2-total">40,617</td><td class="r mono bold grand">82,853</td></tr>
+        <tr><td>Coco 630ml</td><td class="r mono">24,818</td><td class="r mono">19,392</td><td class="r mono bold b3-total">44,210</td><td class="r mono">17,285</td><td class="r mono">16,418</td><td class="r mono bold s2-total">33,703</td><td class="r mono bold grand">77,913</td></tr>
+        <tr><td>Manzana 630ml</td><td class="r mono">23,166</td><td class="r mono">17,418</td><td class="r mono bold b3-total">40,584</td><td class="r mono">19,840</td><td class="r mono">17,421</td><td class="r mono bold s2-total">37,261</td><td class="r mono bold grand">77,845</td></tr>
+        <tr><td>Naranja Mandarina 630ml</td><td class="r mono">21,079</td><td class="r mono">15,038</td><td class="r mono bold b3-total">36,117</td><td class="r mono">19,438</td><td class="r mono">15,701</td><td class="r mono bold s2-total">35,139</td><td class="r mono bold grand">71,256</td></tr>
+        <tr><td>Uva Mora Azul 630ml</td><td class="r mono">19,886</td><td class="r mono">17,265</td><td class="r mono bold b3-total">37,151</td><td class="r mono">13,830</td><td class="r mono">13,754</td><td class="r mono bold s2-total">27,584</td><td class="r mono bold grand">64,735</td></tr>
+        <tr><td>Coco Piña 630ml</td><td class="r mono">9,785</td><td class="r mono">13,012</td><td class="r mono bold b3-total">22,797</td><td class="r mono">7,272</td><td class="r mono">10,386</td><td class="r mono bold s2-total">17,658</td><td class="r mono bold grand">40,455</td></tr>
+        <tr><td>Manzana Limón 630ml (Vit.)</td><td class="r mono">10,851</td><td class="r mono">8,967</td><td class="r mono bold b3-total">19,818</td><td class="r mono">9,125</td><td class="r mono">8,742</td><td class="r mono bold s2-total">17,867</td><td class="r mono bold grand">37,685</td></tr>
+        <tr><td>Naranja Mango 630ml (Vit.)</td><td class="r mono">11,882</td><td class="r mono">8,536</td><td class="r mono bold b3-total">20,418</td><td class="r mono">9,341</td><td class="r mono">8,048</td><td class="r mono bold s2-total">17,389</td><td class="r mono bold grand">37,807</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- CHAT -->
