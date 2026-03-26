@@ -672,6 +672,49 @@ footer {
 }
 .top-btn.visible { opacity: 1; transform: none; }
 .top-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,168,.08); }
+
+/* ── INNOVATION TRACKER ── */
+.innov-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 16px; margin-bottom: 20px;
+}
+.innov-sku-cards { display: flex; gap: 10px; flex-wrap: wrap; }
+.innov-sku-card {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 10px 16px; min-width: 140px;
+}
+.innov-sku-label {
+  font-family:var(--font-mono);font-size:9px;
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;
+}
+.innov-sku-name { font-family:var(--font-head);font-size:16px;font-weight:700; }
+.innov-sku-sub { font-size:10px;color:var(--muted);margin-top:2px;font-family:var(--font-mono); }
+.innov-cp-color { color:#FACC15; border-left:3px solid #FACC15; padding-left:8px; }
+.innov-ffr-color { color:#A78BFA; border-left:3px solid #A78BFA; padding-left:8px; }
+.innov-toggle-row { display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:16px; }
+.innov-chart-wrap { position:relative;height:320px;margin-bottom:16px; }
+.innov-table-wrap { overflow-x:auto; }
+.innov-table { width:100%;border-collapse:collapse;font-size:10px;min-width:700px; }
+.innov-table th {
+  background:var(--bg4);color:var(--muted);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.05em;text-transform:uppercase;
+  padding:6px 8px;text-align:right;border-bottom:1px solid var(--border2);
+  white-space:nowrap;
+}
+.innov-table th:first-child{text-align:left}
+.innov-table td{padding:5px 8px;text-align:right;font-family:var(--font-mono);font-size:10px;border-bottom:1px solid var(--border)}
+.innov-table td:first-child{text-align:left;font-weight:600;color:var(--muted);font-size:10px}
+.innov-table tr.cp-row td{color:#FACC15}
+.innov-table tr.ffr-row td{color:#A78BFA}
+.innov-table tr.gap-row td{font-weight:700}
+.innov-table tr.gap-row td.pos{color:var(--green)}
+.innov-table tr.gap-row td.neg{color:var(--red)}
+.innov-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.innov-kpi{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.innov-kpi-lbl{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.innov-kpi-val{font-family:var(--font-head);font-size:20px;font-weight:700}
+.innov-kpi-sub{font-size:9px;color:var(--muted);margin-top:2px;font-family:var(--font-mono)}
 </style>
 </head>
 <body>
@@ -701,6 +744,10 @@ footer {
   <div class="sidebar-item" onclick="navScrollTo('sec-tendencia')" data-sec="sec-tendencia">
     <div class="sidebar-dot"></div>
     <span class="sidebar-label">SOM Tendencia</span>
+  </div>
+  <div class="sidebar-item" onclick="navScrollTo('sec-innov')" data-sec="sec-innov">
+    <div class="sidebar-dot"></div>
+    <span class="sidebar-label">Innovación</span>
   </div>
   <div class="sidebar-item" onclick="navScrollTo('sec-sellout')" data-sec="sec-sellout">
     <div class="sidebar-dot"></div>
@@ -1002,6 +1049,90 @@ footer {
   <!-- SELL-OUT VALOR por SKU-MES -->
 
   <!-- INTERACTIVE PERF TABLE -->
+
+  <!-- INNOVATION TRACKER -->
+  <div class="section-label" style="margin-top:28px" id="sec-innov">Tracker de Innovación — Curva de lanzamiento</div>
+  <div class="panel" style="margin-bottom:16px">
+
+    <div class="innov-header">
+      <div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6">
+          Velocidad de adopción semana a semana desde lanzamiento.<br>
+          <span style="color:var(--accent)">Benchmark:</span> Fresa Frutos Rojos — mejor lanzamiento histórico de Suerox.
+        </div>
+        <div class="innov-sku-cards">
+          <div class="innov-sku-card">
+            <div class="innov-sku-label innov-cp-color">Innovación 2026</div>
+            <div class="innov-sku-name" style="color:#FACC15">Coco Piña</div>
+            <div class="innov-sku-sub">Lanzamiento: S52-2025 · 8 semanas</div>
+          </div>
+          <div class="innov-sku-card">
+            <div class="innov-sku-label innov-ffr-color">Benchmark histórico</div>
+            <div class="innov-sku-name" style="color:#A78BFA">Fresa Frutos Rojos</div>
+            <div class="innov-sku-sub">Lanzamiento: S01-2025 · Mejor lanzamiento SX</div>
+          </div>
+        </div>
+      </div>
+      <div class="innov-toggle-row">
+        <div class="toggle-group">
+          <button class="toggle-btn active" onclick="setInnovView('weekly',this)">Semanal</button>
+          <button class="toggle-btn" onclick="setInnovView('cumulative',this)">Acumulado</button>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" onclick="setInnovCanal('all',this)">Total</button>
+          <button class="toggle-btn" onclick="setInnovCanal('B3',this)">B3</button>
+          <button class="toggle-btn" onclick="setInnovCanal('SC',this)">SC</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Strip -->
+    <div class="innov-kpi-strip">
+      <div class="innov-kpi">
+        <div class="innov-kpi-lbl">CP — Pzas LW (S07)</div>
+        <div class="innov-kpi-val" style="color:#FACC15">6,886</div>
+        <div class="innov-kpi-sub">vs FFR S07: 10,271 pzas</div>
+      </div>
+      <div class="innov-kpi">
+        <div class="innov-kpi-lbl">CP — Acum. 8 semanas</div>
+        <div class="innov-kpi-val" style="color:#FACC15">34,662</div>
+        <div class="innov-kpi-sub">FFR 8 sem: 78,373 pzas</div>
+      </div>
+      <div class="innov-kpi">
+        <div class="innov-kpi-lbl">CP vs FFR S07 pzas</div>
+        <div class="innov-kpi-val" style="color:var(--amber)">67%</div>
+        <div class="innov-kpi-sub">del volumen de FFR en S07</div>
+      </div>
+      <div class="innov-kpi">
+        <div class="innov-kpi-lbl">Tendencia CP</div>
+        <div class="innov-kpi-val" style="color:var(--green)">▲ Creciendo</div>
+        <div class="innov-kpi-sub">S00→S07: +697% pzas/sem</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="innov-chart-wrap"><canvas id="innovChart"></canvas></div>
+
+    <!-- Table -->
+    <div class="innov-table-wrap">
+      <table class="innov-table" id="innovTable">
+        <thead>
+          <tr>
+            <th style="text-align:left">SKU</th>
+            <th>S00</th><th>S01</th><th>S02</th><th>S03</th>
+            <th>S04</th><th>S05</th><th>S06</th><th>S07</th>
+            <th>S08</th><th>S09</th><th>S10</th><th>S11</th>
+            <th>S12</th><th>S13</th><th>S14</th><th>S15</th>
+          </tr>
+        </thead>
+        <tbody id="innovTbody"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px;font-family:var(--font-mono);font-size:9px;color:var(--muted);padding:8px 10px;background:var(--bg4);border-radius:6px;border-left:2px solid var(--accent)">
+      Eje X = semanas desde lanzamiento (S00 = primera semana de venta) | B3 = BA+MB+BAE | SC = Supercenter | WME no disponible para Coco Piña | Fuente: Base Sell-Out Semanal WM
+    </div>
+  </div>
+
   <div class="section-label" style="margin-top:28px" id="sec-sellout">Sell-out Suerox por SKU — Performance LW / L4W / YTD vs año anterior</div>
   <div class="panel" style="margin-bottom:16px">
     <div class="perf-controls">
@@ -1979,11 +2110,12 @@ function calcPromo(){
 
 
 <script>
-const NAV_SECTIONS = ['sec-som','sec-historico','sec-tendencia','sec-sellout','sec-calc','sec-agente'];
+const NAV_SECTIONS = ['sec-som','sec-historico','sec-tendencia','sec-innov','sec-sellout','sec-calc','sec-agente'];
 const NAV_NAMES = {
   'sec-som':       'Share of Market',
   'sec-historico': 'SOM Histórico Semanal',
   'sec-tendencia': 'SOM Tendencia 8 Semanas',
+  'sec-innov':     'Tracker de Innovación',
   'sec-sellout':   'Sell-out por SKU',
   'sec-calc':      'Calculadora de Promo',
   'sec-agente':    'Agente de Inteligencia'
@@ -2029,6 +2161,149 @@ function updateNav() {
 
 window.addEventListener('scroll', updateNav, { passive: true });
 window.addEventListener('load', updateNav);
+</script>
+
+
+<script>
+const CP_B3  = [522, 1541, 1807, 2396, 2547, 3478, 3213, 3295];
+const CP_SC  = [342, 1283, 1561, 2045, 1910, 2466, 2665, 3591];
+const CP_TOT = [864, 2824, 3368, 4441, 4457, 5944, 5878, 6886];
+const CP_CUM = [864, 3688, 7056, 11497, 15954, 21898, 27776, 34662];
+const FFR_B3  = [4292, 4352, 4336, 4420, 6176, 5772, 5873, 5219, 7008, 6818, 7826, 7375, 8021, 6666, 7252, 8844];
+const FFR_SC  = [3678, 4236, 4259, 4216, 5629, 5420, 5443, 5052, 6624, 6597, 7292, 6469, 7217, 6218, 6498, 8007];
+const FFR_TOT = [7970, 8588, 8595, 8636, 11805, 11192, 11316, 10271, 13632, 13415, 15118, 13844, 15238, 12884, 13750, 16851];
+const FFR_CUM = [7970, 16558, 25153, 33789, 45594, 56786, 68102, 78373, 92005, 105420, 120538, 134382, 149620, 162504, 176254, 193105];
+const INNOV_LABELS = ['S00', 'S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'S13', 'S14', 'S15'];
+
+let innovView  = 'weekly';
+let innovCanal = 'all';
+let innovChartInst = null;
+
+function setInnovView(v, btn){
+  innovView = v;
+  document.querySelectorAll('#sec-innov ~ .panel .toggle-group:first-of-type .toggle-btn')
+    .forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderInnovChart();
+}
+function setInnovCanal(c, btn){
+  innovCanal = c;
+  document.querySelectorAll('#sec-innov ~ .panel .toggle-group:last-of-type .toggle-btn')
+    .forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderInnovChart();
+  renderInnovTable();
+}
+
+function getInnovData(sku){
+  if(innovCanal==='B3')  return sku==='cp' ? CP_B3  : FFR_B3;
+  if(innovCanal==='SC')  return sku==='cp' ? CP_SC  : FFR_SC;
+  return sku==='cp' ? CP_TOT : FFR_TOT;
+}
+function getCumData(sku){
+  const d = getInnovData(sku);
+  let c=0; return d.map(v=>c+=v);
+}
+
+function renderInnovChart(){
+  const labels = INNOV_LABELS;
+  const cp_data  = innovView==='cumulative' ? getCumData('cp')  : getInnovData('cp');
+  const ffr_data = innovView==='cumulative' ? getCumData('ffr') : getInnovData('ffr');
+
+  const datasets = [
+    {
+      label:'Fresa Frutos Rojos (benchmark)',
+      data: ffr_data,
+      backgroundColor: innovView==='weekly' ? 'rgba(167,139,250,0.35)' : 'transparent',
+      borderColor: '#A78BFA',
+      borderWidth: 2,
+      fill: innovView==='cumulative',
+      tension: 0.35,
+      type: innovView==='weekly' ? 'bar' : 'line',
+      order: 2,
+      pointRadius: 0,
+    },
+    {
+      label:'Coco Piña (innovación)',
+      data: cp_data,
+      backgroundColor: innovView==='weekly' ? 'rgba(250,204,21,0.85)' : 'transparent',
+      borderColor: '#FACC15',
+      borderWidth: 2.5,
+      fill: innovView==='cumulative',
+      tension: 0.35,
+      type: innovView==='weekly' ? 'bar' : 'line',
+      order: 1,
+      pointRadius: innovView==='cumulative' ? 3 : 0,
+      pointBackgroundColor: '#FACC15',
+    },
+  ];
+
+  const config = {
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode:'index', intersect:false },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { color: '#6B7A94', font:{ size:10, family:"'DM Mono',monospace" }, boxWidth:10, padding:16 }
+        },
+        tooltip: {
+          backgroundColor:'#0F1218',borderColor:'rgba(255,255,255,.12)',borderWidth:1,
+          titleColor:'#E8EDF5',bodyColor:'#6B7A94',padding:10,
+          callbacks: {
+            title: ctx => innovView==='cumulative' ? 'Acumulado hasta ' + ctx[0].label : 'Semana ' + ctx[0].label,
+            label: ctx => ' ' + ctx.dataset.label.split(' ')[0] + ': ' + (ctx.raw||0).toLocaleString('es-MX') + ' pzas'
+          }
+        }
+      },
+      scales: {
+        x: { ticks:{ color:'#6B7A94',font:{size:9,family:"'DM Mono',monospace"} }, grid:{color:'rgba(255,255,255,.04)'} },
+        y: {
+          ticks:{ color:'#6B7A94',font:{size:9}, callback:v=>v.toLocaleString('es-MX') },
+          grid:{color:'rgba(255,255,255,.06)'},
+          title:{ display:true, text: innovView==='cumulative'?'Piezas acumuladas':'Piezas / semana', color:'#6B7A94', font:{size:9} }
+        }
+      }
+    }
+  };
+  if(innovChartInst) innovChartInst.destroy();
+  innovChartInst = new Chart(document.getElementById('innovChart'), config);
+}
+
+function renderInnovTable(){
+  const cpD  = getInnovData('cp');
+  const ffrD = getInnovData('ffr');
+  const n = INNOV_LABELS.length;
+  let html = '';
+
+  // CP row
+  html += '<tr class="cp-row"><td>Coco Piña 🟡</td>';
+  for(let i=0;i<n;i++) html += `<td>${cpD[i]!==undefined ? cpD[i].toLocaleString('es-MX') : '—'}</td>`;
+  html += '</tr>';
+
+  // FFR row
+  html += '<tr class="ffr-row"><td>Fresa Frutos Rojos 🟣</td>';
+  for(let i=0;i<n;i++) html += `<td>${ffrD[i]!==undefined ? ffrD[i].toLocaleString('es-MX') : '—'}</td>`;
+  html += '</tr>';
+
+  // GAP row
+  html += '<tr class="gap-row"><td style="color:var(--muted)">GAP (CP − FFR)</td>';
+  for(let i=0;i<n;i++){
+    const gap = (cpD[i]||0) - (ffrD[i]||0);
+    const cls = gap>=0?'pos':'neg';
+    const sign = gap>=0?'+':'';
+    html += `<td class="${cls}">${sign}${gap.toLocaleString('es-MX')}</td>`;
+  }
+  html += '</tr>';
+
+  document.getElementById('innovTbody').innerHTML = html;
+}
+
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{ renderInnovChart(); renderInnovTable(); }, 300);
+});
 </script>
 
 </body>
